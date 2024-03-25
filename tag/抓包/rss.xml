@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Faceless Blog • Posts by &#34;抓包&#34; tag</title>
+        <link>https://Alanhays.gitee.io</link>
+        <description>数据采集、逆向安全、网络杂谈</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 14 Dec 2023 05:59:32 +0000</pubDate>
+        <lastBuildDate>Thu, 14 Dec 2023 05:59:32 +0000</lastBuildDate>
+        <category>AST</category>
+        <category>解混淆</category>
+        <category>nodejs</category>
+        <category>build</category>
+        <category>frida</category>
+        <category>jnitrace</category>
+        <category>objection</category>
+        <category>GitHub</category>
+        <category>Actions</category>
+        <category>TLS/SSL</category>
+        <category>JA3</category>
+        <category>JA4</category>
+        <category>证书</category>
+        <category>magisk</category>
+        <category>andorid</category>
+        <category>fastboot</category>
+        <category>root</category>
+        <category>charles</category>
+        <category>抓包</category>
+        <category>加速乐</category>
+        <category>思路</category>
+        <category>SO</category>
+        <category>Native</category>
+        <category>入门级</category>
+        <category>windows</category>
+        <category>资源</category>
+        <category>疑难杂症</category>
+        <category>hexo</category>
+        <item>
+            <guid isPermalink="true">https://alanhays.gitee.io/posts/43239.html</guid>
+            <title>charles移动&amp;PC抓包配置</title>
+            <link>https://alanhays.gitee.io/posts/43239.html</link>
+            <category>charles</category>
+            <category>抓包</category>
+            <pubDate>Thu, 14 Dec 2023 05:59:32 +0000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;安装-charles&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装-charles&#34;&gt;#&lt;/a&gt; 安装 charles&lt;/h1&gt;
+&lt;p&gt;官网下载：&lt;a href=&#34;https://www.charlesproxy.com/download/&#34;&gt;https://www.charlesproxy.com/download/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;电脑抓包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#电脑抓包&#34;&gt;#&lt;/a&gt; 电脑抓包&lt;/h1&gt;
+&lt;p&gt;安装好证书，打开 charles 这开启端口抓包，可设置 PC 系统代理来抓包数据，但通常不推荐这么做，推荐使用&lt;a href=&#34;https://microsoftedge.microsoft.com/addons/detail/fdbloeknjpnloaggplaobopplkdhnikc&#34;&gt; Proxy SwitchyOmega&lt;/a&gt; （Edge 插件 | chrome 也有此插件）来进行浏览器抓包。&lt;/p&gt;
+&lt;h2 id=&#34;代理设置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代理设置&#34;&gt;#&lt;/a&gt; 代理设置&lt;/h2&gt;
+&lt;p&gt;操作：Proxy -&amp;gt; Proxy Settings 1. 勾选 Enable tranaparent HTTP proxying 2. 勾选 Enable SOCKS proxy&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1702542982696-ff3a7b7a-cb54-45f2-9240-15a56ef773de.png#averageHue=%23eeedec&amp;amp;clientId=u81dbcc76-2115-4&amp;amp;from=paste&amp;amp;height=466&amp;amp;id=u1a21edff&amp;amp;originHeight=699&amp;amp;originWidth=813&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=39284&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u10dc5636-6596-47fb-a940-a83a8f00c23&amp;amp;title=&amp;amp;width=542&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;抓取端口设置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#抓取端口设置&#34;&gt;#&lt;/a&gt; 抓取端口设置&lt;/h2&gt;
+&lt;p&gt;操作：Proxy -&amp;gt; &lt;a href=&#34;https://so.csdn.net/so/search?q=SSL&amp;amp;spm=1001.2101.3001.7020&#34;&gt;SSL&lt;/a&gt; Proxying Settings 1. 勾选 Enable SSL Proxying 2. 点击 Add，添加抓取端口&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1702542919357-abd6010c-5334-4b49-9366-46eb366e5ad5.png#averageHue=%23ebeae9&amp;amp;clientId=u81dbcc76-2115-4&amp;amp;from=paste&amp;amp;height=438&amp;amp;id=u20559f8c&amp;amp;originHeight=657&amp;amp;originWidth=813&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=61836&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u63c04ad3-1aa3-44e5-a2e7-a9c0e2dda23&amp;amp;title=&amp;amp;width=542&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装证书&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装证书&#34;&gt;#&lt;/a&gt; 安装证书&lt;/h2&gt;
+&lt;p&gt;操作：Help -&amp;gt; SSL Proxying -&amp;gt; Install Charles Root Certificate -&amp;gt; 安装证书 -&amp;gt; 本地计算机 -&amp;gt; 将所有的证书都放入下列存储 -&amp;gt; 点击浏览，选择” 受信任的根证书颁发机构” -&amp;gt; 完成&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/gif/26634545/1702542740132-c2b41f8f-4bd4-4534-9f3a-7bd6e3e3d394.gif#averageHue=%23efefeb&amp;amp;clientId=u81dbcc76-2115-4&amp;amp;from=drop&amp;amp;id=ueca600f2&amp;amp;originHeight=1197&amp;amp;originWidth=1980&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=2581990&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u9846250a-e561-479a-bcd4-5d345d04fb2&amp;amp;title=&#34; alt=&#34;PixPin_2023-12-14_16-31-31.gif&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;移动抓包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#移动抓包&#34;&gt;#&lt;/a&gt; 移动抓包&lt;/h1&gt;
+&lt;p&gt;手机和 PC 处于同一网络下，将 charles&lt;strong&gt; 证书&lt;/strong&gt;安装至&lt;strong&gt;系统&lt;/strong&gt;（安卓 7 以下不用），配置&lt;strong&gt; WiFi 代理&lt;/strong&gt;或者&lt;strong&gt; clash 代理转发&lt;/strong&gt;，如此即可在 PC 上抓到手机流量包了。&lt;/p&gt;
+&lt;h2 id=&#34;安装证书-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装证书-2&#34;&gt;#&lt;/a&gt; 安装证书&lt;/h2&gt;
+&lt;p&gt;准备安装 android 证书，按照下方步骤，显示图片弹窗后进行下一步。&lt;br&gt;
+&lt;strong&gt;Help&lt;/strong&gt;-&amp;gt; &lt;strong&gt;SSL Proxying&lt;/strong&gt; -&amp;gt;&lt;strong&gt;Install Charles Root Certificate On a Mobile Device&lt;/strong&gt;。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1703312970820-c7e0626a-d8c1-4be9-8f91-036c35357056.png#averageHue=%23e7e5e3&amp;amp;clientId=uef12f301-3e43-4&amp;amp;from=paste&amp;amp;height=170&amp;amp;id=u5cc1829c&amp;amp;originHeight=255&amp;amp;originWidth=814&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=26000&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ue3ce1d79-7a01-4302-af17-d1841650ceb&amp;amp;title=&amp;amp;width=542.6666666666666&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 手机浏览器输入地址 &lt;a href=&#34;http://chls.pro/ssl&#34;&gt;http://chls.pro/ssl&lt;/a&gt; 下载 crt 证书&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1702535270215-e71cd701-5988-4f3b-a89f-29b9bf53ed72.png#averageHue=%239a9ca4&amp;amp;clientId=ufc930610-f89c-4&amp;amp;from=paste&amp;amp;height=819&amp;amp;id=Mcxwp&amp;amp;originHeight=1228&amp;amp;originWidth=591&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=103675&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ubec0b902-275a-48bc-a551-3a86ba9f403&amp;amp;title=&amp;amp;width=394&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装证书详细步骤：&lt;a href=&#34;/2023/12/20/yuque/android%E8%AF%81%E4%B9%A6%E5%AE%89%E8%A3%85%E4%B8%8E%E6%A0%A1%E9%AA%8C%E7%9B%B8%E5%85%B3%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#34;&gt;android 证书安装与校验相关解决办法&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;手动设置代理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#手动设置代理&#34;&gt;#&lt;/a&gt; 手动设置代理&lt;/h2&gt;
+&lt;p&gt;代理主机：&lt;strong&gt;PC&lt;/strong&gt; 的 IP 地址，我这里是&lt;strong&gt; WiFi&lt;/strong&gt; 所以是&lt;strong&gt; WLAN&lt;/strong&gt; 的&lt;strong&gt; IPv4&lt;/strong&gt; 地址。&lt;br&gt;
+代理端口：&lt;strong&gt;charles -&amp;gt; Proxy -&amp;gt; ProxySettings -&amp;gt; Proxies&lt;/strong&gt; 页面中的 &lt;strong&gt;HTTP Proxy -&amp;gt; Port&lt;/strong&gt; ，&lt;strong&gt;默认&lt;/strong&gt;为&lt;strong&gt; 8888&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1702535694493-ac598886-d284-4c1f-afe7-eb1f2442bc2f.png#averageHue=%23817e7d&amp;amp;clientId=ufc930610-f89c-4&amp;amp;from=paste&amp;amp;height=741&amp;amp;id=ue0569354&amp;amp;originHeight=1111&amp;amp;originWidth=1794&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=287946&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ue22ead4e-85ab-48ed-b5aa-d597a7d05af&amp;amp;title=&amp;amp;width=1196&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;clash-配置代理转发&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#clash-配置代理转发&#34;&gt;#&lt;/a&gt; clash 配置代理转发&lt;/h2&gt;
+&lt;p&gt;打开 clash 依次点击 &lt;strong&gt;配置 -&amp;gt; 加号 -&amp;gt; 文件 -&amp;gt; 浏览文件 -&amp;gt; 配置文件&lt;/strong&gt;，选择 MT 管理器打开，将下面代码&lt;strong&gt;根据注释修改&lt;/strong&gt;后粘贴进去，保存好，启动服务即可。（下方有操作 gif）&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;mixed-port:&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;7890&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;allow-lan:&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;mode:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;global&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;log-level:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;info&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;external-controller:&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;127.0&lt;/span&gt;&lt;span class=&#34;number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;number&#34;&gt;.1&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;:9090&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;proxies:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;proxy_http&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;type:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;http&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;server:&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;&lt;span class=&#34;number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;number&#34;&gt;.199&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 代理主机&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;port:&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;8888&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# http代理端口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;udp:&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;proxy_socks5&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;type:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;socks5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;server:&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;192.168&lt;/span&gt;&lt;span class=&#34;number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;number&#34;&gt;.199&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 代理主机&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;port:&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;8889&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# socks代理端口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;udp:&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;proxy-groups:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;rules:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;配置名称随意，启动后记得选择代理模式哦！&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/gif/26634545/1702537855126-591ef863-1e1b-4d96-853a-69762b62290b.gif#averageHue=%23ecebec&amp;amp;clientId=ufc930610-f89c-4&amp;amp;from=drop&amp;amp;id=u5fc3d2e3&amp;amp;originHeight=1228&amp;amp;originWidth=591&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=3818248&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u4df31eeb-7401-42c3-95f4-02a5f80b311&amp;amp;title=&#34; alt=&#34;PixPin_2023-12-14_15-10-03.gif&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

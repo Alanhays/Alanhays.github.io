@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Alanhays.gitee.io</id>
+    <title>Faceless Blog • Posts by &#34;fastboot&#34; tag</title>
+    <link href="https://Alanhays.gitee.io" />
+    <updated>2023-12-20T02:49:06.000Z</updated>
+    <category term="AST" />
+    <category term="解混淆" />
+    <category term="nodejs" />
+    <category term="build" />
+    <category term="frida" />
+    <category term="jnitrace" />
+    <category term="objection" />
+    <category term="GitHub" />
+    <category term="Actions" />
+    <category term="TLS/SSL" />
+    <category term="JA3" />
+    <category term="JA4" />
+    <category term="证书" />
+    <category term="magisk" />
+    <category term="andorid" />
+    <category term="fastboot" />
+    <category term="root" />
+    <category term="charles" />
+    <category term="抓包" />
+    <category term="加速乐" />
+    <category term="思路" />
+    <category term="SO" />
+    <category term="Native" />
+    <category term="入门级" />
+    <category term="windows" />
+    <category term="资源" />
+    <category term="疑难杂症" />
+    <category term="hexo" />
+    <entry>
+        <id>https://alanhays.gitee.io/posts/45467.html</id>
+        <title>android逆向分析环境配置</title>
+        <link rel="alternate" href="https://alanhays.gitee.io/posts/45467.html"/>
+        <content type="html">&lt;h1 id=&#34;资源文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#资源文件&#34;&gt;#&lt;/a&gt; 资源文件&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2023/zip/26634545/1703052470975-a479d323-df18-42ff-853f-276c2131959a.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2023%2Fzip%2F26634545%2F1703052470975-a479d323-df18-42ff-853f-276c2131959a.zip%22%2C%22name%22%3A%22adb-fastboot.zip%22%2C%22size%22%3A3765786%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u7cda5742-2eb3-451d-b580-34c5f297476%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22KebVn%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;adb-fastboot.zip&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;获取-root-权限&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#获取-root-权限&#34;&gt;#&lt;/a&gt; 获取 root 权限&lt;/h1&gt;
+&lt;h2 id=&#34;magisk&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#magisk&#34;&gt;#&lt;/a&gt; Magisk&lt;/h2&gt;
+&lt;p&gt;magisk 中文网：&lt;a href=&#34;https://magiskcn.com/&#34;&gt;https://magiskcn.com/&lt;/a&gt;&lt;br&gt;
+magisk 官网：&lt;a href=&#34;https://magiskmanager.com/&#34;&gt;https://magiskmanager.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境&#34;&gt;#&lt;/a&gt; 环境&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;解锁 Bootloader&lt;/li&gt;
+&lt;li&gt;提取 boot.img (卡刷包中有)&lt;/li&gt;
+&lt;li&gt;PC 端&lt;strong&gt; adb-fastboot&lt;/strong&gt; 环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;修补 boot.img&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/gif/26634545/1703052109455-296af09d-fccf-4099-82e3-7dae58f608de.gif#averageHue=%23eeedee&amp;amp;clientId=ue2fcaaf7-e91c-4&amp;amp;from=drop&amp;amp;id=ude4dd989&amp;amp;originHeight=1228&amp;amp;originWidth=591&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=4240369&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u50b904ac-b0b4-4a7d-ad2f-b12e0d4fe07&amp;amp;title=&#34; alt=&#34;PixPin_2023-12-20_09-51-40.gif&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;安装证书&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装证书&#34;&gt;#&lt;/a&gt; 安装证书&lt;/h1&gt;
+&lt;p&gt;安装证书详细步骤：&lt;a href=&#34;/posts/42317.html&#34;&gt;android 证书安装与校验相关解决办法&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;问题记录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#问题记录&#34;&gt;#&lt;/a&gt; 问题记录&lt;/h1&gt;
+&lt;h2 id=&#34;小米-8-写入-boot-报错&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#小米-8-写入-boot-报错&#34;&gt;#&lt;/a&gt; 小米 8 写入 boot 报错&lt;/h2&gt;
+&lt;h3 id=&#34;write-to-device-failed-invalid-argument&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#write-to-device-failed-invalid-argument&#34;&gt;#&lt;/a&gt; Write to device failed (Invalid argument)&lt;/h3&gt;
+&lt;p&gt;报错详情 -&amp;gt;** **&lt;a href=&#34;https://blog.csdn.net/qq_39441603/article/details/124679556&#34;&gt; 原文地址&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;D:\user\Downloads\adb-fastboot&amp;gt;fastboot flash boot magisk_patched-26400_QSOWo.img&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Warning: skip copying boot image avb footer (boot partition size: 0, boot image size: 45851946).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Sending &amp;#x27;boot&amp;#x27; (44777 KB)                          FAILED (Write to device failed (Invalid argument))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fastboot: error: Command failed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;新建文件 &lt;code&gt;txt&lt;/code&gt;  文件粘贴代码块内容，保存后修改后缀为 &lt;code&gt;bat&lt;/code&gt; ，以管理员方式运行。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;@echo off&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;reg add &amp;quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\18D1D00D0100&amp;quot; /v &amp;quot;osvc&amp;quot; /t REG_BINARY /d &amp;quot;0000&amp;quot; /f&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;reg add &amp;quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\18D1D00D0100&amp;quot; /v &amp;quot;SkipContainerIdQuery&amp;quot; /t REG_BINARY /d &amp;quot;01000000&amp;quot; /f&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;reg add &amp;quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\18D1D00D0100&amp;quot; /v &amp;quot;SkipBOSDescriptorQuery&amp;quot; /t REG_BINARY /d &amp;quot;01000000&amp;quot; /f&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;pause&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;执行完后，执行写入 boot 成功。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1703040985764-924bd56a-4821-4b6f-afc5-67df9f4fe391.png#averageHue=%231d1d1d&amp;amp;clientId=ucd4155a3-2258-4&amp;amp;from=paste&amp;amp;height=82&amp;amp;id=u3ba72421&amp;amp;originHeight=123&amp;amp;originWidth=1140&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=19723&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=uff1395f0-22ae-459a-967d-4eadd322f82&amp;amp;title=&amp;amp;width=760&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="magisk" />
+        <category term="andorid" />
+        <category term="fastboot" />
+        <category term="root" />
+        <updated>2023-12-20T02:49:06.000Z</updated>
+    </entry>
+</feed>

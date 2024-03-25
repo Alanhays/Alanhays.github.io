@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Faceless Blog • Posts by &#34;nodejs&#34; tag</title>
+        <link>https://Alanhays.gitee.io</link>
+        <description>数据采集、逆向安全、网络杂谈</description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 03 Jan 2024 07:34:02 +0000</pubDate>
+        <lastBuildDate>Wed, 03 Jan 2024 07:34:02 +0000</lastBuildDate>
+        <category>AST</category>
+        <category>解混淆</category>
+        <category>nodejs</category>
+        <category>build</category>
+        <category>frida</category>
+        <category>jnitrace</category>
+        <category>objection</category>
+        <category>GitHub</category>
+        <category>Actions</category>
+        <category>TLS/SSL</category>
+        <category>JA3</category>
+        <category>JA4</category>
+        <category>证书</category>
+        <category>magisk</category>
+        <category>andorid</category>
+        <category>fastboot</category>
+        <category>root</category>
+        <category>charles</category>
+        <category>抓包</category>
+        <category>加速乐</category>
+        <category>思路</category>
+        <category>SO</category>
+        <category>Native</category>
+        <category>入门级</category>
+        <category>windows</category>
+        <category>资源</category>
+        <category>疑难杂症</category>
+        <category>hexo</category>
+        <item>
+            <guid isPermalink="true">https://alanhays.gitee.io/posts/38694.html</guid>
+            <title>Build Nodejs 环境配置</title>
+            <link>https://alanhays.gitee.io/posts/38694.html</link>
+            <category>nodejs</category>
+            <category>build</category>
+            <pubDate>Wed, 03 Jan 2024 07:34:02 +0000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h1&gt;
+&lt;p&gt;对于 js 补浏览器环境时遇到一些 js 无法实现的环境，那么就需要修改 node 源码来实现，本文简单复述一下 Build Node 所需要的环境及配置，推荐直接看&lt;a href=&#34;https://github.com/nodejs/node/blob/HEAD/BUILDING.md&#34;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;windows-1011&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windows-1011&#34;&gt;#&lt;/a&gt; windows 10/11&lt;/h1&gt;
+&lt;h2 id=&#34;环境准备&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境准备&#34;&gt;#&lt;/a&gt; 环境准备&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/nodejs/node/blob/main/BUILDING.md#windows&#34;&gt;windows 部分官方教程（推荐）&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;一-python-环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-python-环境&#34;&gt;#&lt;/a&gt; 一、Python 环境&lt;/h3&gt;
+&lt;p&gt;安装好 python 并且配置环境变量，官网下载（&lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;点击下载&lt;/a&gt;）我使用的版本是 3.8.0，低版本不知道是否可用，如果第一次安装 Python 建议安装 3.8.0 及以上。&lt;br&gt;
+如果下载速度慢，可点击&lt;a href=&#34;https://surans.lanzouw.com/b00y05wvi&#34;&gt;链接（密码：h85c）&lt;/a&gt;下载我拷贝到蓝奏云文件。&lt;/p&gt;
+&lt;h3 id=&#34;二-visual-studio-installer&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-visual-studio-installer&#34;&gt;#&lt;/a&gt; &lt;strong&gt;二、Visual Studio Installer&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;安装 C++/.NET 环境有两个可选方案&lt;/strong&gt; 1. 安装&lt;a href=&#34;https://visualstudio.microsoft.com/downloads/&#34;&gt; Visual Studio 2022&lt;/a&gt; 并且勾选 “使用 C++ 进行桌面开发” 和 “.NET 桌面生成工具” 进行环境安装。(推荐)&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1704271697464-b1f8bde9-2952-4f6c-91a2-87734409773a.png#averageHue=%23f6f6f6&amp;amp;clientId=u118ac858-2e95-4&amp;amp;from=paste&amp;amp;height=226&amp;amp;id=ua286dd38&amp;amp;originHeight=339&amp;amp;originWidth=623&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=30683&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u7d40a80e-757a-42f1-b4c2-e59071004fb&amp;amp;title=&amp;amp;width=415.3333333333333&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2. 安装&lt;a href=&#34;https://aka.ms/vs/17/release/vs_buildtools.exe&#34;&gt;构建工具&lt;/a&gt;打开后自动安装 “C++ 构建工具” 环境等待安装完成后打开 &lt;strong&gt;Visual Studio Installer&lt;/strong&gt; 勾选 “.NET 桌面生成工具” 进行环境安装。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1704270358817-7e442e02-b5b5-4901-82d1-525aa2c60c9c.png#averageHue=%23f4f4f4&amp;amp;clientId=ud662e875-ea93-4&amp;amp;from=paste&amp;amp;height=282&amp;amp;id=u6feb1e41&amp;amp;originHeight=423&amp;amp;originWidth=720&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=17211&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u6d5b157d-079c-40a7-815a-a6b0a00aacb&amp;amp;title=&amp;amp;width=480&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;三-netwide-汇编程序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三-netwide-汇编程序&#34;&gt;#&lt;/a&gt; 三、NetWide 汇编程序&lt;/h3&gt;
+&lt;p&gt;点击&lt;a href=&#34;https://www.nasm.us/pub/nasm/releasebuilds/2.16.02rc6/win64/&#34;&gt;这里&lt;/a&gt;下载后安装即可，安装是一直点 next 即可。&lt;br&gt;
+我安装的版本是&lt;a href=&#34;https://www.nasm.us/pub/nasm/releasebuilds/2.16.02rc6/win64/nasm-2.16.02rc6-installer-x64.exe&#34;&gt; nasm-2.16.02rc6&lt;/a&gt;，其他版本选择点击&lt;a href=&#34;https://www.nasm.us/pub/nasm/releasebuilds&#34;&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1704272184220-9e9a3c78-f713-4c5e-ac47-d953d32b9b6c.png#averageHue=%23f8f0ef&amp;amp;clientId=u5ba02b39-7ceb-4&amp;amp;from=paste&amp;amp;height=98&amp;amp;id=u873f167a&amp;amp;originHeight=147&amp;amp;originWidth=1018&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=35233&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=uf20b23dd-d83a-4aad-8df8-6167647b80a&amp;amp;title=&amp;amp;width=678.6666666666666&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下载-node-源码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#下载-node-源码&#34;&gt;#&lt;/a&gt; 下载 Node 源码&lt;/h2&gt;
+&lt;p&gt;官方教程使用 Git Bash 来进行下载，&lt;a href=&#34;https://git-scm.com/download/win&#34;&gt; Git for Windows&lt;/a&gt; 下载安装。记得配置环境变量。&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git clone https://github.com/nodejs/node.git&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cd node&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;由于 node 源码 400m 比较大，我选择进入&lt;a href=&#34;https://nodejs.org/en/download/&#34;&gt; Nodejs 官网&lt;/a&gt;进行源码下载，当然使用你喜欢的方式即可。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1704273537999-f71a2be0-54f9-463b-aa21-aa82b1e13aaf.png#averageHue=%23faf9f9&amp;amp;clientId=u5ba02b39-7ceb-4&amp;amp;from=paste&amp;amp;height=705&amp;amp;id=u94fc557b&amp;amp;originHeight=1057&amp;amp;originWidth=1791&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=149833&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u7d9819c3-fefa-4269-bb68-5450930f849&amp;amp;title=&amp;amp;width=1194&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;build-node&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#build-node&#34;&gt;#&lt;/a&gt; Build Node&lt;/h2&gt;
+&lt;p&gt;进入到 node 源码根目录，例如我这里需要进入到 &lt;code&gt;nodes/node-v20.10.0&lt;/code&gt; &lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1704272480903-a4072940-1d9a-4ae7-a0da-3b8b34a56cfc.png#averageHue=%232a2c2f&amp;amp;clientId=u5ba02b39-7ceb-4&amp;amp;from=paste&amp;amp;height=564&amp;amp;id=ue8b55729&amp;amp;originHeight=846&amp;amp;originWidth=847&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=73957&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u6a26f812-9cf3-4eac-88af-a8bd2d93d79&amp;amp;title=&amp;amp;width=564.6666666666666&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;开始构建&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;构建后会在&lt;strong&gt; Release&lt;/strong&gt; 文件夹下生成构建好的&lt;strong&gt; node.exe&lt;/strong&gt; 文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.\vcbuild&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;进行测试&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.\vcbuild test&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;测试 Node.js 是否正确构建&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Release\node -e &amp;quot;console.log(&amp;#x27;Hello from Node.js&amp;#x27;, process.version)&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
