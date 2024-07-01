@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Faceless Blog • Posts by &#34;精选推荐&#34; category</title>
+        <link>https://Alanhays.github.io</link>
+        <description>数据采集、逆向安全、网络杂谈</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 15 Feb 2024 12:28:23 +0000</pubDate>
+        <lastBuildDate>Thu, 15 Feb 2024 12:28:23 +0000</lastBuildDate>
+        <category>AST</category>
+        <category>解混淆</category>
+        <category>nodejs</category>
+        <category>build</category>
+        <category>frida</category>
+        <category>jnitrace</category>
+        <category>objection</category>
+        <category>GitHub</category>
+        <category>Actions</category>
+        <category>TLS/SSL</category>
+        <category>JA3</category>
+        <category>JA4</category>
+        <category>证书</category>
+        <category>magisk</category>
+        <category>andorid</category>
+        <category>fastboot</category>
+        <category>root</category>
+        <category>charles</category>
+        <category>抓包</category>
+        <category>加速乐</category>
+        <category>思路</category>
+        <category>SO</category>
+        <category>Native</category>
+        <category>入门级</category>
+        <category>windows</category>
+        <category>资源</category>
+        <category>疑难杂症</category>
+        <category>hexo</category>
+        <item>
+            <guid isPermalink="true">https://alanhays.github.io/posts/57474.html</guid>
+            <title>基于Hexo框架语雀文章博客模板</title>
+            <link>https://alanhays.github.io/posts/57474.html</link>
+            <category>GitHub</category>
+            <category>Actions</category>
+            <pubDate>Thu, 15 Feb 2024 12:28:23 +0000</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;跳转仓库:&lt;a href=&#34;https://github.com/haysalan/hexo-yuque-template&#34;&gt;haysalan/hexo-yuque-template&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;特点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#特点&#34;&gt;#&lt;/a&gt; 特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;支持在线一键部署或更新博客&lt;/li&gt;
+&lt;li&gt;支持拉取语雀文章自动更新博客内容&lt;/li&gt;
+&lt;li&gt;支持自定义 github actons 或 gitee 工作流&lt;/li&gt;
+&lt;li&gt;高度可配置，支持自定义部署脚本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h2&gt;
+&lt;h3 id=&#34;第一步-新建仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一步-新建仓库&#34;&gt;#&lt;/a&gt; 第一步 新建仓库&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;新建两个仓库&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一个私有仓库（名称随意）用于存放 hexo 博客配置等文件&lt;br&gt;
+一个开源仓库 &lt;a href=&#34;http://yourname.github.io&#34;&gt;yourname.github.io&lt;/a&gt; （替换成你的用户名）&lt;/p&gt;
+&lt;h3 id=&#34;第二步-配置私有仓库环境变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二步-配置私有仓库环境变量&#34;&gt;#&lt;/a&gt; 第二步 配置私有仓库环境变量&lt;/h3&gt;
+&lt;p&gt;1.github 个人设置创建 token 给与 workflow 权限以及无时间期限。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1708004138179-a9745680-2e72-416d-bba9-00913ab4e7cb.png#averageHue=%23fefcf8&amp;amp;clientId=u19099788-83ff-4&amp;amp;from=paste&amp;amp;height=740&amp;amp;id=u89e4af88&amp;amp;originHeight=1110&amp;amp;originWidth=1894&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=171807&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u6f965fa4-65e1-44a8-aaeb-17b680d0756&amp;amp;title=&amp;amp;width=1262.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2. 将 github token 配置到你的私有仓库中。&lt;strong&gt;名称需一致&lt;/strong&gt;。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1708000324358-713596cf-6b43-47b7-8e7e-7d80a21466d2.png#averageHue=%23fefefe&amp;amp;clientId=u22a9482c-048f-4&amp;amp;from=paste&amp;amp;height=806&amp;amp;id=u4587f0a2&amp;amp;originHeight=1209&amp;amp;originWidth=1920&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=130041&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u8942af84-1ea7-4e08-8012-9876e0fe226&amp;amp;title=&amp;amp;width=1280&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;3. 进入语雀网页版个人设置，获取语雀 token（现在需要超级会员才能创建，有之前创建的好的可直接使用）&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1708001750001-786dbfbf-4cc0-4ad0-b912-1f5d800cbb4b.png#averageHue=%239d9d9d&amp;amp;clientId=u22a9482c-048f-4&amp;amp;from=paste&amp;amp;height=705&amp;amp;id=u633a491f&amp;amp;originHeight=1058&amp;amp;originWidth=1974&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=98460&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u24c28be8-539c-4b05-9d12-27a8d1a0f0b&amp;amp;title=&amp;amp;width=1316&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;4. 将语雀 token 配置到私有仓库中 &lt;strong&gt;名称需一致&lt;/strong&gt;。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1708000395322-ba9dfab1-e87f-445d-aaa5-b774e992de19.png#averageHue=%23fefdfd&amp;amp;clientId=u22a9482c-048f-4&amp;amp;from=paste&amp;amp;height=769&amp;amp;id=ue5213370&amp;amp;originHeight=1153&amp;amp;originWidth=1858&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=180849&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u4bbdad0e-6a5b-4488-a562-01a206bcbf9&amp;amp;title=&amp;amp;width=1238.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第三步-修改-actions&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第三步-修改-actions&#34;&gt;#&lt;/a&gt; 第三步 修改 actions&lt;/h3&gt;
+&lt;p&gt;目录  &lt;code&gt;.github/workflows/blog-update.yml&lt;/code&gt; &lt;br&gt;
+ 将其中的 PUBLISH_REPOSITORY 修改为你的开源仓库路径。&lt;br&gt;
+目录： &lt;code&gt;actions/gitee-sync.yml&lt;/code&gt; &lt;br&gt;
+ &lt;code&gt;actions&lt;/code&gt;  目录下存放开源仓库的工作流，用于在开源仓库触发执行。 &lt;code&gt;gitee-sync.yml &lt;/code&gt; 基于 &lt;a href=&#34;https://github.com/yanglbme/gitee-pages-action&#34;&gt;yanglbme /gitee-pages-action&lt;/a&gt; 根据注释就行配置即可。&lt;br&gt;
+ &lt;code&gt;gitee-sync.yml&lt;/code&gt;  用于同步 &lt;code&gt;github pages&lt;/code&gt;  同步到 &lt;code&gt;gitee pages&lt;/code&gt;  可自动更新 &lt;code&gt;gitee pages&lt;/code&gt;  无需  &lt;code&gt;gitee pages pro&lt;/code&gt; 。&lt;/p&gt;
+&lt;h3 id=&#34;第四步-自定义部署&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第四步-自定义部署&#34;&gt;#&lt;/a&gt; 第四步 自定义部署&lt;/h3&gt;
+&lt;p&gt;默认使用 anzhiyu 主题，可自行更换。&lt;br&gt;
+安装 hexo 主题或依赖请修改  &lt;code&gt;blog-update.yml&lt;/code&gt; 。&lt;br&gt;
+构建博客静态文件前后指令添加请修改 &lt;code&gt;script/generate.sh&lt;/code&gt; 。&lt;/p&gt;
+&lt;h2 id=&#34;预览&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#预览&#34;&gt;#&lt;/a&gt; 预览&lt;/h2&gt;
+&lt;p&gt;博客预览： &lt;a href=&#34;https://haysalan.github.io/&#34;&gt;https://haysalan.github.io/&lt;/a&gt;&lt;br&gt;
+ 博客模板：&lt;a href=&#34;https://github.com/haysalan/hexo-yuque-template&#34;&gt;https://github.com/haysalan/hexo-yuque-template&lt;/a&gt;&lt;br&gt;
+github：&lt;a href=&#34;https://github.com/Alanhays&#34;&gt;https://github.com/Alanhays&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://alanhays.github.io/posts/52888.html</guid>
+            <title>精选网络资源&amp;疑难杂症记录</title>
+            <link>https://alanhays.github.io/posts/52888.html</link>
+            <category>windows</category>
+            <category>资源</category>
+            <category>疑难杂症</category>
+            <pubDate>Tue, 09 Jan 2024 01:49:31 +0000</pubDate>
+            <description><![CDATA[ &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;% note blue &amp;#x27;anzhiyufont anzhiyu-icon-bullhorn&amp;#x27; simple %&amp;#125;需要什么可在下方评论，如找到会新增，不定期更;所有资源均来自网络收集，如有侵权联系我删除！&amp;#123;% endnote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;windows&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windows&#34;&gt;#&lt;/a&gt; windows&lt;/h1&gt;
+&lt;h2 id=&#34;日常使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#日常使用&#34;&gt;#&lt;/a&gt; 日常使用&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704765044646-25a0ada4-36ca-491f-a60b-afb585380df3.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704765044646-25a0ada4-36ca-491f-a60b-afb585380df3.zip%22%2C%22name%22%3A%22360%E9%A9%B1%E5%8A%A8%E5%A4%A7%E5%B8%88%E7%BA%AF%E5%87%80%E7%89%882.0.0.2000.exe.zip%22%2C%22size%22%3A8620772%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u0f0b20d1-f056-4054-9f9c-b4567f4d1cf%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22u23cf6b8c%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;360 驱动大师纯净版 2.0.0.2000.exe.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776048633-de6865e1-be62-42b4-b50e-68d964d9ce2a.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776048633-de6865e1-be62-42b4-b50e-68d964d9ce2a.zip%22%2C%22name%22%3A%22PixPin_1.0.9.1_Setup-%E6%88%AA%E5%9B%BE%E5%B7%A5%E5%85%B7.zip%22%2C%22size%22%3A28895840%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u9ac5fc97-8522-4940-91a3-9281f01d0bc%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22NJhn3%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;PixPin_1.0.9.1_Setup - 截图工具.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776019834-334f8283-323b-4e2a-ad7f-4ab9a8c5b5bb.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776019834-334f8283-323b-4e2a-ad7f-4ab9a8c5b5bb.zip%22%2C%22name%22%3A%22%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7.zip%22%2C%22size%22%3A243303%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22ub63c6379-947e-475b-b30e-e9e51984afd%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22u13a49127%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;右键菜单编辑工具.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776226192-d1024849-e60a-40af-bd1d-55fc0d71aa47.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776226192-d1024849-e60a-40af-bd1d-55fc0d71aa47.zip%22%2C%22name%22%3A%22%E5%9B%BE%E5%90%A7%E5%B7%A5%E5%85%B7%E7%AE%B1.zip%22%2C%22size%22%3A235839903%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22uac7abb7c-6628-453e-a65d-f57d04d6bd9%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22ucd2c3525%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;图吧工具箱.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776088072-7098a3e0-62fd-48bc-a876-77b9aab8ec56.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776088072-7098a3e0-62fd-48bc-a876-77b9aab8ec56.zip%22%2C%22name%22%3A%22window%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0.zip%22%2C%22size%22%3A834854%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u151ced73-8261-43c2-9391-f4d88092a7f%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22uf3b740f0%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;window 关闭自动更新.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776254996-5ec014dd-0758-4eea-9bce-0cbbcecf8f81.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776254996-5ec014dd-0758-4eea-9bce-0cbbcecf8f81.zip%22%2C%22name%22%3A%22TrafficMonitor-%E4%BB%BB%E5%8A%A1%E6%A0%8F%E4%BF%A1%E6%81%AF.zip%22%2C%22size%22%3A1155572%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22ue836c368-90ab-47a5-9a41-3c6d7af4e5f%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22uf55149d5%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;TrafficMonitor - 任务栏信息.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1711591386343-c79dc842-0028-4620-9e2f-96d93a333b24.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1711591386343-c79dc842-0028-4620-9e2f-96d93a333b24.zip%22%2C%22name%22%3A%22IDM-Activation-Script-zh-cn.zip%22%2C%22size%22%3A23022%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22ua975b663-34ee-4251-b7d2-f782ab08f85%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22ub29ea257%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;IDM-Activation-Script-zh-cn.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1711593099973-427b2cab-b8c7-407d-889f-222a3eb74f99.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1711593099973-427b2cab-b8c7-407d-889f-222a3eb74f99.zip%22%2C%22name%22%3A%22Clash-0.20.39.zip%22%2C%22size%22%3A405305938%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u66a0e7b4-7588-43d6-8a95-8912f95afad%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22u077cf20f%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;Clash-0.20.39.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1711598531899-a66c67c7-dd2d-4a64-aa30-5b58f22e7ddc.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1711598531899-a66c67c7-dd2d-4a64-aa30-5b58f22e7ddc.zip%22%2C%22name%22%3A%223DP_Net_v2101-%E7%A6%BB%E7%BA%BF%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85.zip%22%2C%22size%22%3A125632255%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u706398a9-5a77-4040-8143-cba95741976%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22u18d22503%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;3DP_Net_v2101 - 离线网卡驱动安装.zip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;逆向开发&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#逆向开发&#34;&gt;#&lt;/a&gt; 逆向开发&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704770622403-d0dc9dac-3a92-4c08-a06b-873ef5fb731e.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704770622403-d0dc9dac-3a92-4c08-a06b-873ef5fb731e.zip%22%2C%22name%22%3A%22IDA_Pro_v8.3_Portable.zip%22%2C%22size%22%3A484596297%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22ub5a488bd-a89c-4610-8b97-b98b9752204%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22u22fe2ccc%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;IDA_Pro_v8.3_Portable.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776071506-ab96b9d0-a969-4fad-b7b1-cbdaf9af07dd.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776071506-ab96b9d0-a969-4fad-b7b1-cbdaf9af07dd.zip%22%2C%22name%22%3A%22IDA_Pro_v7.5_Portable.zip%22%2C%22size%22%3A429698754%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u3b9dbbe5-22de-47e5-8cf1-b1733f0c0d3%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22u936b9241%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;IDA_Pro_v7.5_Portable.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776118713-bd340794-01cb-424b-8644-cf932d436be2.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776118713-bd340794-01cb-424b-8644-cf932d436be2.zip%22%2C%22name%22%3A%22TyporaCrack-main.zip%22%2C%22size%22%3A102408761%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22udddeb491-d69b-4aad-92da-f3ae663b8e1%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22u2782718e%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;TyporaCrack-main.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704775949699-67598aea-409b-4f8a-99ca-7eff220dc472.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704775949699-67598aea-409b-4f8a-99ca-7eff220dc472.zip%22%2C%22name%22%3A%22adb-fastboot.zip%22%2C%22size%22%3A3765786%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u826aff21-7140-4a57-9b86-35e638cf964%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22ub0eec022%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;adb-fastboot.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704775985265-41a9a7d0-c609-4676-a69a-36de24e21f73.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704775985265-41a9a7d0-c609-4676-a69a-36de24e21f73.zip%22%2C%22name%22%3A%22jadx-1.4.7.zip%22%2C%22size%22%3A29887862%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u40382398-67f3-44a9-9801-bb7dfcd475b%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22u93e96a93%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;jadx-1.4.7.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776136039-dc6dbf22-4202-40bc-aac1-431b79320713.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776136039-dc6dbf22-4202-40bc-aac1-431b79320713.zip%22%2C%22name%22%3A%22GDA3.97pro_patch.zip%22%2C%22size%22%3A5951778%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22ufb57ffea-6b85-4a1a-bf78-6bf716b4e73%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22ub61318ab%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;GDA3.97pro_patch.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776287514-a7eeb37b-b4a5-4258-9513-e95c7b557987.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776287514-a7eeb37b-b4a5-4258-9513-e95c7b557987.zip%22%2C%22name%22%3A%22jetbra-IDE%E6%BF%80%E6%B4%BB.zip%22%2C%22size%22%3A106748%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22ue9a29434-a8d5-494f-b919-bca4f7d29cd%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22ue7903929%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;jetbra-IDE 激活.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1704776355152-36a2bfde-66bb-4869-a7cc-c0ba8b64c7d0.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1704776355152-36a2bfde-66bb-4869-a7cc-c0ba8b64c7d0.zip%22%2C%22name%22%3A%22fastgithub_win-x64-github%E5%8A%A0%E9%80%9F.zip%22%2C%22size%22%3A23456162%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22ue55aea78-bada-449b-a094-9c9a62a7a6c%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22u2d88f5bd%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;fastgithub_win-x64-github 加速.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1711509110961-12386a43-96e6-4c50-8678-e93d1953e792.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2024%2Fzip%2F26634545%2F1711509110961-12386a43-96e6-4c50-8678-e93d1953e792.zip%22%2C%22name%22%3A%22ReRes_JS%E6%9B%BF%E6%8D%A2.zip%22%2C%22size%22%3A67938%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22ua5e272ad-9ce2-49e3-8f0d-6817ed62390%22%2C%22taskType%22%3A%22upload%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22__spacing%22%3A%22both%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22ub34fae1e%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D&#34;&gt;ReRes_JS 替换.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;镜像文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#镜像文件&#34;&gt;#&lt;/a&gt; 镜像文件&lt;/h2&gt;
+&lt;h2 id=&#34;疑难杂症&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#疑难杂症&#34;&gt;#&lt;/a&gt; 疑难杂症&lt;/h2&gt;
+&lt;h1 id=&#34;linux&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux&#34;&gt;#&lt;/a&gt; Linux&lt;/h1&gt;
+&lt;h2 id=&#34;疑难杂症-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#疑难杂症-2&#34;&gt;#&lt;/a&gt; 疑难杂症&lt;/h2&gt;
+&lt;h3 id=&#34;vmware-虚拟机-ubuntu-网络图标消失-bug&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vmware-虚拟机-ubuntu-网络图标消失-bug&#34;&gt;#&lt;/a&gt; Vmware 虚拟机 Ubuntu 网络图标消失 Bug&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo nmcli network off&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo nmcli network on&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://alanhays.github.io/posts/60496.html</guid>
+            <title>GitHub Actions 的使用</title>
+            <link>https://alanhays.github.io/posts/60496.html</link>
+            <category>GitHub</category>
+            <category>Actions</category>
+            <pubDate>Wed, 11 Oct 2023 01:23:47 +0000</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;基本概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本概念&#34;&gt;#&lt;/a&gt; 基本概念&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;workflow （工作流程）：持续集成一次运行的过程，就是一个 workflow。&lt;/li&gt;
+&lt;li&gt;job （任务）：一个 workflow 由一个或多个 jobs 构成，含义是一次持续集成的运行，可以完成多个任务。&lt;/li&gt;
+&lt;li&gt;step（步骤）：每个 job 由多个 step 构成，一步步完成。&lt;/li&gt;
+&lt;li&gt;action （动作）：每个 step 可以依次执行一个或多个命令（action）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;workflow-文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#workflow-文件&#34;&gt;#&lt;/a&gt; workflow 文件&lt;/h2&gt;
+&lt;p&gt;GitHub Actions 的配置文件叫做 workflow 文件，存放在代码仓库的.github/workflows 目录。&lt;br&gt;
+workflow 文件采用 YAML 格式，文件名可以任意取，但是后缀名统一为.yml，比如 foo.yml。&lt;br&gt;
+一个库可以有多个 workflow 文件。&lt;br&gt;
+GitHub 只要发现.github/workflows 目录里面有.yml 文件，就会自动运行该文件。&lt;br&gt;
+workflow 文件的配置字段非常多，详见&lt;a href=&#34;https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions&#34;&gt;官方文档&lt;/a&gt;。下面是一些基本字段。&lt;/p&gt;
+&lt;h3 id=&#34;name&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#name&#34;&gt;#&lt;/a&gt; name&lt;/h3&gt;
+&lt;p&gt;工作流的名称。GitHub 在存储库的 “Actions” 显示工作流的名称。如果省略 ，GitHub 将显示相对于存储库根目录的工作流文件路径。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;name: GitHub Actions Demo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;on&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#on&#34;&gt;#&lt;/a&gt; on&lt;/h3&gt;
+&lt;p&gt;定义运行工作流时的触发事件&lt;/p&gt;
+&lt;h4 id=&#34;使用单个事件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用单个事件&#34;&gt;#&lt;/a&gt; 使用单个事件&lt;/h4&gt;
+&lt;p&gt;例如，具有以下值的工作流将在推送到工作流存储库中的任何分支时运行：on&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;on:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;push&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;使用多个事件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用多个事件&#34;&gt;#&lt;/a&gt; 使用多个事件&lt;/h4&gt;
+&lt;p&gt;您可以指定单个事件或多个事件。例如，当推送到存储库中的任何分支或有人分叉存储库时，将运行具有以下值的工作流：on&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;on:&lt;/span&gt; [&lt;span class=&#34;string&#34;&gt;push&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;fork&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果指定多个事件，则只需发生其中一个事件即可触发工作流。如果同时发生工作流的多个触发事件，则将触发多个工作流运行。&lt;/p&gt;
+&lt;h3 id=&#34;jobsjob_idname&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jobsjob_idname&#34;&gt;#&lt;/a&gt; jobs.&amp;lt;job_id&amp;gt;.name&lt;/h3&gt;
+&lt;p&gt;工作流运行中要执行的一项或多项任务&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;jobs:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;task1:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;The&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;first&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;task&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;be&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;executed&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;task2:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;The&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;second&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;task&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;execute&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上面代码的 jobs 字段包含 task1、task2 任务，task1 (job_id) 里面的 name 字段是任务的说明。&lt;/p&gt;
+&lt;h3 id=&#34;jobsjob_idneeds&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jobsjob_idneeds&#34;&gt;#&lt;/a&gt; jobs.&amp;lt;job_id&amp;gt;.needs&lt;/h3&gt;
+&lt;p&gt;用于标识在运行当前任务之前&lt;strong&gt;必须成功完成&lt;/strong&gt;的一项或多项作业&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;jobs:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;job1:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;job2:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;needs:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;job1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;job3:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;needs:&lt;/span&gt; [&lt;span class=&#34;string&#34;&gt;job1&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;job2&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;job1 无需等待直接执行、job2 需要等待 job1 执行完成、job3 需要等待 job1、job2 都执行完成。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;示例执行流程 | job1 -&amp;gt; job2 -&amp;gt; job3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;jobsjob_idruns-on&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jobsjob_idruns-on&#34;&gt;#&lt;/a&gt; jobs.&amp;lt;job_id&amp;gt;.runs-on&lt;/h3&gt;
+&lt;p&gt;runs-on 字段指定运行所需要的虚拟机环境。可用虚拟机如下（示例）&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ubuntu&lt;/th&gt;
+&lt;th&gt;windows&lt;/th&gt;
+&lt;th&gt;macos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ubuntu-latest&lt;/td&gt;
+&lt;td&gt;windows-latest&lt;/td&gt;
+&lt;td&gt;macos-latest&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ubuntu-18.04&lt;/td&gt;
+&lt;td&gt;windows-2019&lt;/td&gt;
+&lt;td&gt;macos-10.14&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ubuntu-22.04&lt;/td&gt;
+&lt;td&gt;windows-2022&lt;/td&gt;
+&lt;td&gt;macos-12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;指定虚拟机为 ubuntu-22.04 （必填）&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;runs-on:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;ubuntu-22.04&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;jobsjob_idsteps&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jobsjob_idsteps&#34;&gt;#&lt;/a&gt; jobs.&amp;lt;job_id&amp;gt;.steps&lt;/h3&gt;
+&lt;p&gt;steps 字段指定每个 Job 的运行步骤，可以包含一个或多个步骤。&lt;br&gt;
+每个步骤都可以指定以下三个字段。&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;jobs.&amp;lt;job_id&amp;gt;.steps.name：名称&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;jobs.&amp;lt;job_id&amp;gt;.steps.run：运行的命令或者&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;action&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;jobs.&amp;lt;job_id&amp;gt;.steps.env：所需的环境变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://alanhays.github.io/posts/31158.html</guid>
+            <title>语雀编写文章一键自动部署博客至Github和Gitee</title>
+            <link>https://alanhays.github.io/posts/31158.html</link>
+            <category>GitHub</category>
+            <category>hexo</category>
+            <pubDate>Mon, 09 Oct 2023 01:26:58 +0000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h1&gt;
+&lt;p&gt;一键发布语雀文章至 github (hexo 博客) 和 gitee 并实现 gitee pages 自动更新。&lt;br&gt;
+hexo 博客示例：&lt;a href=&#34;https://alanhays.gitee.io/&#34;&gt;https://alanhays.gitee.io&lt;/a&gt; | &lt;a href=&#34;https://alanhays.github.io/&#34;&gt;https://alanhays.github.io&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;语雀编写文章&lt;/li&gt;
+&lt;li&gt;同步语雀文章至 hexo&lt;/li&gt;
+&lt;li&gt;hexo 发布语雀文章更新博客&lt;/li&gt;
+&lt;li&gt;github actions 自动同步仓库至 gitee 并更新 pages&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;部署-hexo-博客&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署-hexo-博客&#34;&gt;#&lt;/a&gt; 部署 hexo 博客&lt;/h1&gt;
+&lt;h2 id=&#34;安装-git-和-node推荐-lts-版&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装-git-和-node推荐-lts-版&#34;&gt;#&lt;/a&gt; 安装 git 和 node (推荐 LTS 版)&lt;/h2&gt;
+&lt;p&gt;git 官网 -&amp;gt; &lt;a href=&#34;https://git-scm.com/&#34;&gt;https://git-scm.com/&lt;/a&gt;&lt;br&gt;
+node 官网 -&amp;gt; &lt;a href=&#34;https://nodejs.org/en&#34;&gt;https://nodejs.org/en&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;检查安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#检查安装&#34;&gt;#&lt;/a&gt; 检查安装&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696815879153-89905aee-a4f4-4351-b2be-a418d5289a1f.png#averageHue=%231c1c1c&amp;amp;clientId=uc8e77ead-24d0-4&amp;amp;from=paste&amp;amp;height=213&amp;amp;id=ua6097101&amp;amp;originHeight=320&amp;amp;originWidth=580&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=28256&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u9f0dc45d-8f83-4494-99cf-6158fcd1a8d&amp;amp;title=&amp;amp;width=386.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装-hexo-博客&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装-hexo-博客&#34;&gt;#&lt;/a&gt; 安装 hexo 博客&lt;/h2&gt;
+&lt;p&gt;找到一个位置，打开&lt;strong&gt; Git Bash Here&lt;/strong&gt; 分别执行下面命令，其中 blog 可替换为你喜欢的名字（会在当前目录新建一个文件夹）&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo init blog&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cd&lt;/span&gt; blog&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo s&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;验证博客&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证博客&#34;&gt;#&lt;/a&gt; 验证博客&lt;/h3&gt;
+&lt;p&gt;浏览器打开 -&amp;gt; &lt;a href=&#34;http://localhost:4000/&#34;&gt;http://localhost:4000/&lt;/a&gt;&lt;br&gt;
+ 打开后正常显示 hexo 默认博客&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696819368453-729a4ca6-bbb8-4c85-8bca-ededef4785b6.png#averageHue=%23bfb8a8&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=756&amp;amp;id=u8acbc7b7&amp;amp;originHeight=1134&amp;amp;originWidth=2218&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=759300&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u10ac20be-540d-4353-b093-d570559a31c&amp;amp;title=&amp;amp;width=1478.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;hexo-常用命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hexo-常用命令&#34;&gt;#&lt;/a&gt; hexo 常用命令&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo -g &lt;span class=&#34;comment&#34;&gt;# 安装Hexo&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm update hexo -g &lt;span class=&#34;comment&#34;&gt;# 升级&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo init blog &lt;span class=&#34;comment&#34;&gt;# 初始化博客 blog(选填) 创建一个名为blog的目录并初始化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;命令简写&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo n &lt;span class=&#34;string&#34;&gt;&amp;quot;文章名&amp;quot;&lt;/span&gt; == hexo new &lt;span class=&#34;string&#34;&gt;&amp;quot;文章名&amp;quot;&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 新建文章&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo g == hexo generate &lt;span class=&#34;comment&#34;&gt;# 生成&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo s == hexo server &lt;span class=&#34;comment&#34;&gt;# 启动服务预览&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo d == hexo deploy &lt;span class=&#34;comment&#34;&gt;# 部署&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo server &lt;span class=&#34;comment&#34;&gt;# Hexo会监视文件变动并自动更新，无须重启服务器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo server -s &lt;span class=&#34;comment&#34;&gt;# 静态模式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo server -p xxxx &lt;span class=&#34;comment&#34;&gt;# 更改端口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo server -i xxx.xxx.x.x &lt;span class=&#34;comment&#34;&gt;# 自定义IP&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo clean &lt;span class=&#34;comment&#34;&gt;#清除缓存&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;github-创建仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#github-创建仓库&#34;&gt;#&lt;/a&gt; GitHub 创建仓库&lt;/h2&gt;
+&lt;p&gt;仓库名称格式&lt;strong&gt;&lt;a href=&#34;http://xn--6qqv7i14ofosyrb.github.io&#34;&gt;你的用户名.github.io&lt;/a&gt;&lt;/strong&gt; 比如我这里应该写&lt;strong&gt;&lt;a href=&#34;http://alanhays.github.io&#34;&gt; alanhays.github.io&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696820476904-24a7e455-bb29-4ee7-a0ec-aacac1cc62b4.png#averageHue=%23fefdfd&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=460&amp;amp;id=u1000ab60&amp;amp;originHeight=690&amp;amp;originWidth=1260&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=82131&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u349313ab-c457-4cbf-820b-5ca8a554e1d&amp;amp;title=&amp;amp;width=840&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;生成秘钥公钥&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#生成秘钥公钥&#34;&gt;#&lt;/a&gt; 生成秘钥 &amp;amp; 公钥&lt;/h3&gt;
+&lt;p&gt;打开&lt;strong&gt; Git Bash Here&lt;/strong&gt; 执行以下命令&lt;br&gt;
+ yourname 改为你的 GitHub 的&lt;strong&gt;用户名&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight verilog&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git &lt;span class=&#34;keyword&#34;&gt;config&lt;/span&gt; --&lt;span class=&#34;keyword&#34;&gt;global&lt;/span&gt; user&lt;span class=&#34;variable&#34;&gt;.name&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;yourname&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;youremail 改为你的注册 GitHub 时的&lt;strong&gt;邮箱&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight verilog&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git &lt;span class=&#34;keyword&#34;&gt;config&lt;/span&gt; --&lt;span class=&#34;keyword&#34;&gt;global&lt;/span&gt; user&lt;span class=&#34;variable&#34;&gt;.email&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;youremail&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;创建 ssh，输入命令，然后一直回车&lt;br&gt;
+ youremail 改为你的注册 GitHub 时的&lt;strong&gt;邮箱&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ssh-keygen -t rsa -C &lt;span class=&#34;string&#34;&gt;&amp;quot;youremail&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在文件中找到这个路径  &lt;code&gt;C:\Users\你的用户名\.ssh&lt;/code&gt; &lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696820209329-78aafc54-a4df-43ef-a591-a54c4cec435a.png#averageHue=%23fcfbfb&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=335&amp;amp;id=uba970c23&amp;amp;originHeight=503&amp;amp;originWidth=1250&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=36653&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u534f1422-c83c-405d-8185-eb299a09a6f&amp;amp;title=&amp;amp;width=833.3333333333334&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 在 GitHub 的 Setting 里面，找到 SSH keys，把 &lt;strong&gt;id_rsa.pub（公钥）&lt;/strong&gt; 里面的内容全部复制到 &lt;strong&gt;key&lt;/strong&gt; 进去，&lt;strong&gt;title&lt;/strong&gt; 随便写即可。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696820340389-82002c4f-34f7-457b-aac5-c75fcf8d994f.png#averageHue=%23dfc7a0&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=685&amp;amp;id=ub6910e9b&amp;amp;originHeight=1028&amp;amp;originWidth=2229&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=144401&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=uaefb561a-cb11-4cfe-ab93-f4ae3537603&amp;amp;title=&amp;amp;width=1486&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hexo-部署到-github&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hexo-部署到-github&#34;&gt;#&lt;/a&gt; hexo 部署到 GitHub&lt;/h2&gt;
+&lt;p&gt;在 blog 文件夹下面找到_config.yml 文件&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696820656627-84e947a3-c369-4f3a-9ca3-ee3dfdfabe6b.png#averageHue=%23fcfbfa&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=385&amp;amp;id=u7ca5a152&amp;amp;originHeight=577&amp;amp;originWidth=1045&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=50703&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=uaf75b89f-b16b-4853-ae00-c0e5500ef7c&amp;amp;title=&amp;amp;width=696.6666666666666&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 在末尾找到 deploy 并修改（以文本格式打开 vscode 或记事本都可）&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696821058208-c025b513-dce0-4127-bfad-b9aa2e70aa06.png#averageHue=%23232221&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=110&amp;amp;id=uc7880959&amp;amp;originHeight=165&amp;amp;originWidth=1286&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=18076&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u03b5f1ea-e6bf-4b58-a1e8-cb971878019&amp;amp;title=&amp;amp;width=857.3333333333334&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+yourname 改为你的&lt;strong&gt; GitHub 的用户名&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;built_in&#34;&gt;type&lt;/span&gt;: git&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  repo: git@github.com:yourname/yourname.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;打开 &lt;strong&gt;Git Bash Here&lt;/strong&gt; 安装 git 部署命令工具&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-deployer-git --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;分别输入以下命令&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo g&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;开启-github-pages-服务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开启-github-pages-服务&#34;&gt;#&lt;/a&gt; 开启 GitHub Pages 服务&lt;/h3&gt;
+&lt;p&gt;打开你的仓库 &lt;strong&gt;&lt;a href=&#34;http://xn--6qqv7i14ofosyrb.github.io&#34;&gt;你的用户名.github.io&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696821614735-b5d5d0f0-9a0f-4b59-93f1-801150eee96c.png#averageHue=%23e3c9a3&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=659&amp;amp;id=u284e1f5c&amp;amp;originHeight=988&amp;amp;originWidth=1524&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=171184&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ub1485883-ea5f-4b69-96f0-ae5b57aa0e0&amp;amp;title=&amp;amp;width=1016&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 按照步骤操作开启 Pages&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696821772577-05048722-563c-47be-bd46-b6d4932eec52.png#averageHue=%23fdfdfd&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=799&amp;amp;id=u4baa7511&amp;amp;originHeight=1198&amp;amp;originWidth=2229&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=219642&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u79720bf3-878c-491c-9aa1-ae6410f729b&amp;amp;title=&amp;amp;width=1486&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 完成后等待一会，你可看到如下页面，点击&lt;strong&gt; Visit site&lt;/strong&gt; 查看你的博客&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696821907600-a75b2eb4-b1a7-4b96-bcc1-c7b253012d83.png#averageHue=%23fefefd&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=469&amp;amp;id=uf01d3533&amp;amp;originHeight=703&amp;amp;originWidth=1729&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=112852&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=udb7a02b2-137a-4a50-bb79-2d7b21db56b&amp;amp;title=&amp;amp;width=1152.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hexo-主题配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hexo-主题配置&#34;&gt;#&lt;/a&gt; hexo 主题配置&lt;/h2&gt;
+&lt;p&gt;推荐在主题市场选择喜欢的主题，主题中都有详细的使用教程。&lt;br&gt;
+优质主题（排序不分先后）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/anzhiyu-c/hexo-theme-anzhiyu&#34;&gt;anzhiyu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/auroral-ui/hexo-theme-aurora&#34;&gt;aurora&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/amehime/hexo-theme-shoka&#34;&gt;shoka&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;主题市场 &lt;a href=&#34;https://hexo.io/themes/&#34;&gt;https://hexo.io/themes/&lt;/a&gt;&lt;br&gt;
+ 创作主题教程 &lt;a href=&#34;https://hexo.io/zh-cn/docs/themes.html&#34;&gt;https://hexo.io/zh-cn/docs/themes.html&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;同步语雀文章&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#同步语雀文章&#34;&gt;#&lt;/a&gt; 同步语雀文章&lt;/h1&gt;
+&lt;p&gt;项目：&lt;a href=&#34;https://github.com/x-cold/yuque-hexo&#34;&gt;https://github.com/x-cold/yuque-hexo&lt;/a&gt;&lt;br&gt;
+ 注：教程请看项目就不赘述了&lt;/p&gt;
+&lt;h1 id=&#34;github-actions-自动同步&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#github-actions-自动同步&#34;&gt;#&lt;/a&gt; GitHub Actions 自动同步&lt;/h1&gt;
+&lt;p&gt;项目：&lt;a href=&#34;https://github.com/yanglbme/gitee-pages-action&#34;&gt;https://github.com/yanglbme/gitee-pages-action&lt;/a&gt;&lt;br&gt;
+ 注：教程请看项目就不赘述了，存放 &lt;code&gt;./github/workflows/xxx.yml&lt;/code&gt;  位置请看本文。&lt;/p&gt;
+&lt;h3 id=&#34;hexo-项目-github-actions-存放位置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hexo-项目-github-actions-存放位置&#34;&gt;#&lt;/a&gt; hexo 项目 GitHub Actions 存放位置&lt;/h3&gt;
+&lt;p&gt;gitee 仓库依靠 GitHub Actions  &lt;code&gt;./github/workflows/xxx.yml&lt;/code&gt;  实现&lt;br&gt;
+需要将  &lt;code&gt;./github/workflows/xxx.yml&lt;/code&gt;  放置 &lt;code&gt;.deploy_git/.github/workflows/xxx.yml&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;./github/workflows/xxx.yml&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;.deploy_git/.github/workflows/xxx.yml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如此 hexo d 命令推送时才会将 Actions 文件推送&lt;/p&gt;
+&lt;h1 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h1&gt;
+&lt;p&gt;1. 使用下面命令同步语雀最新文章，其中 xxx… 为 token 或 key。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;set&lt;/span&gt; YUQUE_TOKEN=xxx SECRET_ID=xxx SECRET_KEY=xxx &amp;amp;&amp;amp; yuque-hexo &lt;span class=&#34;built_in&#34;&gt;sync&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2. 使用以下两个命令构建和部署博客&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo g&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;执行完后等待 2-3 分钟博客就更新了，如果 github 更新了，gitee 没有那么请查看 GitHub Actions 详细日志，可能因为网络不稳定导致 GitHub Actions 执行失败，请手动执行或再次推送。&lt;/p&gt;
+&lt;h2 id=&#34;我的实现一键更新博客参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#我的实现一键更新博客参考&#34;&gt;#&lt;/a&gt; 我的实现一键更新博客（参考）&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我将变量设置为用户环境变量，相对不可见，变量名&lt;strong&gt;不可自定义&lt;/strong&gt; YUQUE_TOKEN = 你的语雀 token (可读权限)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo clean &amp;amp;&amp;amp; yuque-hexo sync &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo algolia &amp;amp;&amp;amp; hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;查看-github-actions-详细日志&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看-github-actions-详细日志&#34;&gt;#&lt;/a&gt; 查看 GitHub Actions 详细日志&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696823576435-1a74066e-da49-448e-be1c-583f401dfc39.png#averageHue=%23d0ac81&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=680&amp;amp;id=u3c7ad423&amp;amp;originHeight=1020&amp;amp;originWidth=1121&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=134461&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=uc96bcb4b-6e76-40d1-85c2-247cb13607a&amp;amp;title=&amp;amp;width=747.3333333333334&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696823528572-b6272d05-57d4-42cd-b19d-67c888f754be.png#averageHue=%23eff1c9&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=551&amp;amp;id=u6d703f49&amp;amp;originHeight=826&amp;amp;originWidth=1189&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=73500&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u834a05d4-7b34-4587-931b-543b02d52a6&amp;amp;title=&amp;amp;width=792.6666666666666&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Faceless Blog • All posts by \"ja4\" tag",
+    "description": "数据采集、逆向安全、网络杂谈",
+    "home_page_url": "https://Alanhays.github.io",
+    "items": [
+        {
+            "id": "https://alanhays.github.io/posts/50497.html",
+            "url": "https://alanhays.github.io/posts/50497.html",
+            "title": "TLS指纹-JA4",
+            "date_published": "2023-10-21T01:31:26.000Z",
+            "content_html": "<h2 id=\"官方解释\"><a class=\"markdownIt-Anchor\" href=\"#官方解释\">#</a> 官方解释</h2>\n<p>JA4 + 是一套易于使用和共享的网络指纹识别方法。这些方法既是人类可读的，也是机器可读的，以促进更有效的威胁搜寻和分析。这些指纹的用例包括扫描威胁参与者、恶意软件检测、会话劫持预防、合规性自动化、位置跟踪、DDoS 检测、威胁参与者分组、反向外壳检测等等。<br>\nJA4 系列 ：JA4/S/H/L/X/SSH，简称 JA4+<br>\n<a href=\"https://blog.foxio.io/ja4-network-fingerprinting-9376fe9ca637\"> 官方介绍</a> | <a href=\"https://github.com/FoxIO-LLC/ja4\">JA4 指纹</a></p>\n<p>初始指纹：<br>\nJA4 — TLS 客户端 JA4S — TLS 服务器响应<br>\n JA4H — HTTP 客户端</p>\n<p>JA4L — 光距离 / 位置<br>\n JA4X — X509 TLS 证书<br>\n JA4SSH — SSH 流量<br>\n更多指纹正在开发中，并将在发布时添加到 JA4+ 系列中。</p>\n<p>例子<br>\n<img src=\"https://cdn.nlark.com/yuque/0/2023/webp/26634545/1697868649851-fc1d1b6c-4298-41cf-a8d5-28962645cc50.webp#averageHue=%23eaeaea&amp;clientId=ucffaa756-14f5-4&amp;from=ui&amp;id=u5b1e2317&amp;originHeight=496&amp;originWidth=614&amp;originalType=binary%E2%88%B6=1.5&amp;rotation=0&amp;showTitle=false&amp;size=40140&amp;status=done&amp;style=none&amp;taskId=ubf96421a-4174-421d-b1c4-b2abffba38f&amp;title=\" alt=\"1_ouP7r5IlQoTmameDpppq4g.webp\"></p>\n<h1 id=\"\"><a class=\"markdownIt-Anchor\" href=\"#\">#</a> </h1>\n",
+            "tags": [
+                "TLS/SSL",
+                "JA4"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Alanhays.github.io</id>
+    <title>Faceless Blog • Posts by &#34;actions&#34; tag</title>
+    <link href="https://Alanhays.github.io" />
+    <updated>2024-02-15T12:28:23.000Z</updated>
+    <category term="AST" />
+    <category term="解混淆" />
+    <category term="nodejs" />
+    <category term="build" />
+    <category term="frida" />
+    <category term="jnitrace" />
+    <category term="objection" />
+    <category term="GitHub" />
+    <category term="Actions" />
+    <category term="TLS/SSL" />
+    <category term="JA3" />
+    <category term="JA4" />
+    <category term="证书" />
+    <category term="magisk" />
+    <category term="andorid" />
+    <category term="fastboot" />
+    <category term="root" />
+    <category term="charles" />
+    <category term="抓包" />
+    <category term="加速乐" />
+    <category term="思路" />
+    <category term="SO" />
+    <category term="Native" />
+    <category term="入门级" />
+    <category term="windows" />
+    <category term="资源" />
+    <category term="疑难杂症" />
+    <category term="hexo" />
+    <entry>
+        <id>https://alanhays.github.io/posts/57474.html</id>
+        <title>基于Hexo框架语雀文章博客模板</title>
+        <link rel="alternate" href="https://alanhays.github.io/posts/57474.html"/>
+        <content type="html">&lt;blockquote&gt;
+&lt;p&gt;跳转仓库:&lt;a href=&#34;https://github.com/haysalan/hexo-yuque-template&#34;&gt;haysalan/hexo-yuque-template&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;特点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#特点&#34;&gt;#&lt;/a&gt; 特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;支持在线一键部署或更新博客&lt;/li&gt;
+&lt;li&gt;支持拉取语雀文章自动更新博客内容&lt;/li&gt;
+&lt;li&gt;支持自定义 github actons 或 gitee 工作流&lt;/li&gt;
+&lt;li&gt;高度可配置，支持自定义部署脚本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h2&gt;
+&lt;h3 id=&#34;第一步-新建仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一步-新建仓库&#34;&gt;#&lt;/a&gt; 第一步 新建仓库&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;新建两个仓库&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一个私有仓库（名称随意）用于存放 hexo 博客配置等文件&lt;br&gt;
+一个开源仓库 &lt;a href=&#34;http://yourname.github.io&#34;&gt;yourname.github.io&lt;/a&gt; （替换成你的用户名）&lt;/p&gt;
+&lt;h3 id=&#34;第二步-配置私有仓库环境变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二步-配置私有仓库环境变量&#34;&gt;#&lt;/a&gt; 第二步 配置私有仓库环境变量&lt;/h3&gt;
+&lt;p&gt;1.github 个人设置创建 token 给与 workflow 权限以及无时间期限。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1708004138179-a9745680-2e72-416d-bba9-00913ab4e7cb.png#averageHue=%23fefcf8&amp;amp;clientId=u19099788-83ff-4&amp;amp;from=paste&amp;amp;height=740&amp;amp;id=u89e4af88&amp;amp;originHeight=1110&amp;amp;originWidth=1894&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=171807&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u6f965fa4-65e1-44a8-aaeb-17b680d0756&amp;amp;title=&amp;amp;width=1262.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2. 将 github token 配置到你的私有仓库中。&lt;strong&gt;名称需一致&lt;/strong&gt;。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1708000324358-713596cf-6b43-47b7-8e7e-7d80a21466d2.png#averageHue=%23fefefe&amp;amp;clientId=u22a9482c-048f-4&amp;amp;from=paste&amp;amp;height=806&amp;amp;id=u4587f0a2&amp;amp;originHeight=1209&amp;amp;originWidth=1920&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=130041&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u8942af84-1ea7-4e08-8012-9876e0fe226&amp;amp;title=&amp;amp;width=1280&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;3. 进入语雀网页版个人设置，获取语雀 token（现在需要超级会员才能创建，有之前创建的好的可直接使用）&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1708001750001-786dbfbf-4cc0-4ad0-b912-1f5d800cbb4b.png#averageHue=%239d9d9d&amp;amp;clientId=u22a9482c-048f-4&amp;amp;from=paste&amp;amp;height=705&amp;amp;id=u633a491f&amp;amp;originHeight=1058&amp;amp;originWidth=1974&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=98460&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u24c28be8-539c-4b05-9d12-27a8d1a0f0b&amp;amp;title=&amp;amp;width=1316&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;4. 将语雀 token 配置到私有仓库中 &lt;strong&gt;名称需一致&lt;/strong&gt;。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2024/png/26634545/1708000395322-ba9dfab1-e87f-445d-aaa5-b774e992de19.png#averageHue=%23fefdfd&amp;amp;clientId=u22a9482c-048f-4&amp;amp;from=paste&amp;amp;height=769&amp;amp;id=ue5213370&amp;amp;originHeight=1153&amp;amp;originWidth=1858&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=180849&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u4bbdad0e-6a5b-4488-a562-01a206bcbf9&amp;amp;title=&amp;amp;width=1238.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第三步-修改-actions&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第三步-修改-actions&#34;&gt;#&lt;/a&gt; 第三步 修改 actions&lt;/h3&gt;
+&lt;p&gt;目录  &lt;code&gt;.github/workflows/blog-update.yml&lt;/code&gt; &lt;br&gt;
+ 将其中的 PUBLISH_REPOSITORY 修改为你的开源仓库路径。&lt;br&gt;
+目录： &lt;code&gt;actions/gitee-sync.yml&lt;/code&gt; &lt;br&gt;
+ &lt;code&gt;actions&lt;/code&gt;  目录下存放开源仓库的工作流，用于在开源仓库触发执行。 &lt;code&gt;gitee-sync.yml &lt;/code&gt; 基于 &lt;a href=&#34;https://github.com/yanglbme/gitee-pages-action&#34;&gt;yanglbme /gitee-pages-action&lt;/a&gt; 根据注释就行配置即可。&lt;br&gt;
+ &lt;code&gt;gitee-sync.yml&lt;/code&gt;  用于同步 &lt;code&gt;github pages&lt;/code&gt;  同步到 &lt;code&gt;gitee pages&lt;/code&gt;  可自动更新 &lt;code&gt;gitee pages&lt;/code&gt;  无需  &lt;code&gt;gitee pages pro&lt;/code&gt; 。&lt;/p&gt;
+&lt;h3 id=&#34;第四步-自定义部署&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第四步-自定义部署&#34;&gt;#&lt;/a&gt; 第四步 自定义部署&lt;/h3&gt;
+&lt;p&gt;默认使用 anzhiyu 主题，可自行更换。&lt;br&gt;
+安装 hexo 主题或依赖请修改  &lt;code&gt;blog-update.yml&lt;/code&gt; 。&lt;br&gt;
+构建博客静态文件前后指令添加请修改 &lt;code&gt;script/generate.sh&lt;/code&gt; 。&lt;/p&gt;
+&lt;h2 id=&#34;预览&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#预览&#34;&gt;#&lt;/a&gt; 预览&lt;/h2&gt;
+&lt;p&gt;博客预览： &lt;a href=&#34;https://haysalan.github.io/&#34;&gt;https://haysalan.github.io/&lt;/a&gt;&lt;br&gt;
+ 博客模板：&lt;a href=&#34;https://github.com/haysalan/hexo-yuque-template&#34;&gt;https://github.com/haysalan/hexo-yuque-template&lt;/a&gt;&lt;br&gt;
+github：&lt;a href=&#34;https://github.com/Alanhays&#34;&gt;https://github.com/Alanhays&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="GitHub" />
+        <category term="Actions" />
+        <updated>2024-02-15T12:28:23.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://alanhays.github.io/posts/60496.html</id>
+        <title>GitHub Actions 的使用</title>
+        <link rel="alternate" href="https://alanhays.github.io/posts/60496.html"/>
+        <content type="html">&lt;h2 id=&#34;基本概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本概念&#34;&gt;#&lt;/a&gt; 基本概念&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;workflow （工作流程）：持续集成一次运行的过程，就是一个 workflow。&lt;/li&gt;
+&lt;li&gt;job （任务）：一个 workflow 由一个或多个 jobs 构成，含义是一次持续集成的运行，可以完成多个任务。&lt;/li&gt;
+&lt;li&gt;step（步骤）：每个 job 由多个 step 构成，一步步完成。&lt;/li&gt;
+&lt;li&gt;action （动作）：每个 step 可以依次执行一个或多个命令（action）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;workflow-文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#workflow-文件&#34;&gt;#&lt;/a&gt; workflow 文件&lt;/h2&gt;
+&lt;p&gt;GitHub Actions 的配置文件叫做 workflow 文件，存放在代码仓库的.github/workflows 目录。&lt;br&gt;
+workflow 文件采用 YAML 格式，文件名可以任意取，但是后缀名统一为.yml，比如 foo.yml。&lt;br&gt;
+一个库可以有多个 workflow 文件。&lt;br&gt;
+GitHub 只要发现.github/workflows 目录里面有.yml 文件，就会自动运行该文件。&lt;br&gt;
+workflow 文件的配置字段非常多，详见&lt;a href=&#34;https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions&#34;&gt;官方文档&lt;/a&gt;。下面是一些基本字段。&lt;/p&gt;
+&lt;h3 id=&#34;name&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#name&#34;&gt;#&lt;/a&gt; name&lt;/h3&gt;
+&lt;p&gt;工作流的名称。GitHub 在存储库的 “Actions” 显示工作流的名称。如果省略 ，GitHub 将显示相对于存储库根目录的工作流文件路径。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;name: GitHub Actions Demo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;on&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#on&#34;&gt;#&lt;/a&gt; on&lt;/h3&gt;
+&lt;p&gt;定义运行工作流时的触发事件&lt;/p&gt;
+&lt;h4 id=&#34;使用单个事件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用单个事件&#34;&gt;#&lt;/a&gt; 使用单个事件&lt;/h4&gt;
+&lt;p&gt;例如，具有以下值的工作流将在推送到工作流存储库中的任何分支时运行：on&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;on:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;push&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;使用多个事件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用多个事件&#34;&gt;#&lt;/a&gt; 使用多个事件&lt;/h4&gt;
+&lt;p&gt;您可以指定单个事件或多个事件。例如，当推送到存储库中的任何分支或有人分叉存储库时，将运行具有以下值的工作流：on&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;on:&lt;/span&gt; [&lt;span class=&#34;string&#34;&gt;push&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;fork&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果指定多个事件，则只需发生其中一个事件即可触发工作流。如果同时发生工作流的多个触发事件，则将触发多个工作流运行。&lt;/p&gt;
+&lt;h3 id=&#34;jobsjob_idname&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jobsjob_idname&#34;&gt;#&lt;/a&gt; jobs.&amp;lt;job_id&amp;gt;.name&lt;/h3&gt;
+&lt;p&gt;工作流运行中要执行的一项或多项任务&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;jobs:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;task1:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;The&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;first&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;task&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;be&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;executed&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;task2:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;The&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;second&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;task&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;execute&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上面代码的 jobs 字段包含 task1、task2 任务，task1 (job_id) 里面的 name 字段是任务的说明。&lt;/p&gt;
+&lt;h3 id=&#34;jobsjob_idneeds&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jobsjob_idneeds&#34;&gt;#&lt;/a&gt; jobs.&amp;lt;job_id&amp;gt;.needs&lt;/h3&gt;
+&lt;p&gt;用于标识在运行当前任务之前&lt;strong&gt;必须成功完成&lt;/strong&gt;的一项或多项作业&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;jobs:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;job1:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;job2:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;needs:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;job1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;job3:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;needs:&lt;/span&gt; [&lt;span class=&#34;string&#34;&gt;job1&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;job2&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;job1 无需等待直接执行、job2 需要等待 job1 执行完成、job3 需要等待 job1、job2 都执行完成。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;示例执行流程 | job1 -&amp;gt; job2 -&amp;gt; job3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;jobsjob_idruns-on&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jobsjob_idruns-on&#34;&gt;#&lt;/a&gt; jobs.&amp;lt;job_id&amp;gt;.runs-on&lt;/h3&gt;
+&lt;p&gt;runs-on 字段指定运行所需要的虚拟机环境。可用虚拟机如下（示例）&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ubuntu&lt;/th&gt;
+&lt;th&gt;windows&lt;/th&gt;
+&lt;th&gt;macos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ubuntu-latest&lt;/td&gt;
+&lt;td&gt;windows-latest&lt;/td&gt;
+&lt;td&gt;macos-latest&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ubuntu-18.04&lt;/td&gt;
+&lt;td&gt;windows-2019&lt;/td&gt;
+&lt;td&gt;macos-10.14&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ubuntu-22.04&lt;/td&gt;
+&lt;td&gt;windows-2022&lt;/td&gt;
+&lt;td&gt;macos-12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;指定虚拟机为 ubuntu-22.04 （必填）&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;runs-on:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;ubuntu-22.04&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;jobsjob_idsteps&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jobsjob_idsteps&#34;&gt;#&lt;/a&gt; jobs.&amp;lt;job_id&amp;gt;.steps&lt;/h3&gt;
+&lt;p&gt;steps 字段指定每个 Job 的运行步骤，可以包含一个或多个步骤。&lt;br&gt;
+每个步骤都可以指定以下三个字段。&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;jobs.&amp;lt;job_id&amp;gt;.steps.name：名称&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;jobs.&amp;lt;job_id&amp;gt;.steps.run：运行的命令或者&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;action&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;jobs.&amp;lt;job_id&amp;gt;.steps.env：所需的环境变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+        <category term="GitHub" />
+        <category term="Actions" />
+        <updated>2023-10-11T01:23:47.000Z</updated>
+    </entry>
+</feed>

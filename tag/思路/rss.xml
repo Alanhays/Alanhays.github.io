@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Faceless Blog • Posts by &#34;思路&#34; tag</title>
+        <link>https://Alanhays.github.io</link>
+        <description>数据采集、逆向安全、网络杂谈</description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 25 Dec 2023 08:59:43 +0000</pubDate>
+        <lastBuildDate>Mon, 25 Dec 2023 08:59:43 +0000</lastBuildDate>
+        <category>AST</category>
+        <category>解混淆</category>
+        <category>nodejs</category>
+        <category>build</category>
+        <category>frida</category>
+        <category>jnitrace</category>
+        <category>objection</category>
+        <category>GitHub</category>
+        <category>Actions</category>
+        <category>TLS/SSL</category>
+        <category>JA3</category>
+        <category>JA4</category>
+        <category>证书</category>
+        <category>magisk</category>
+        <category>andorid</category>
+        <category>fastboot</category>
+        <category>root</category>
+        <category>charles</category>
+        <category>抓包</category>
+        <category>加速乐</category>
+        <category>思路</category>
+        <category>SO</category>
+        <category>Native</category>
+        <category>入门级</category>
+        <category>windows</category>
+        <category>资源</category>
+        <category>疑难杂症</category>
+        <category>hexo</category>
+        <item>
+            <guid isPermalink="true">https://alanhays.github.io/posts/60184.html</guid>
+            <title>学习逆向过程中的一些问题与其解决办法</title>
+            <link>https://alanhays.github.io/posts/60184.html</link>
+            <category>思路</category>
+            <pubDate>Mon, 25 Dec 2023 08:59:43 +0000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h1&gt;
+&lt;p&gt;学习逆向过程中的一些问题与其解决办法，当然还有大佬们文章内提到的，整理出来方便翻阅，持续更新。&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;% tip key %&amp;#125;当然大家有什么问题也可在下方评论，如有解决本文问题的方法还请不吝赐教，在此感谢鞠躬！&amp;#123;% endtip %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/qq_38851536/category_11102404.html?spm=1001.2014.3001.5482&#34;&gt;白龙 - SO 逆向实战十三篇&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;资源工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#资源工具&#34;&gt;#&lt;/a&gt; 资源工具&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gchq.github.io/CyberChef&#34;&gt;CyberChef - 用于加密，编码，压缩和数据分析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://armconverter.com/&#34;&gt;armconverter - ARM-HEX 转换器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/r0ysue/r0capture&#34;&gt;r0capture - 安卓应用层抓包通杀脚本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/maiyao1988/ExAndroidNativeEmu&#34;&gt;ExAndroidNativeEmu - Python 工具 Unidbg 青春版功能有限&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Pr0214/findhash&#34;&gt;findhash - IDA 脚本 可以检测出哈希算法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sml2h3/ddddocr&#34;&gt;ddddocr - Python 库 通用验证码识别库&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;ida&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ida&#34;&gt;#&lt;/a&gt; IDA&lt;/h1&gt;
+&lt;h2 id=&#34;通过-jni_onload-定位-native-函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#通过-jni_onload-定位-native-函数&#34;&gt;#&lt;/a&gt; 通过 JNI_OnLoad 定位 Native 函数&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;% tip info %&amp;#125;仅限没有经过混淆或加密处理的样本&amp;#123;% endtip %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/gif/26634545/1702550232510-9c4a4843-75f5-4fce-a183-770783c0dddb.gif#averageHue=%23f6f6f5&amp;amp;clientId=u26f63c50-11da-4&amp;amp;from=drop&amp;amp;id=u5aefa470&amp;amp;originHeight=1328&amp;amp;originWidth=2053&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=792808&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u3e2d9528-de56-415e-9185-2b963fb96eb&amp;amp;title=&#34; alt=&#34;PixPin_2023-12-14_18-32-47.gif&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;python&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#python&#34;&gt;#&lt;/a&gt; Python&lt;/h1&gt;
+&lt;h2 id=&#34;python-能不能调用-so-文件的-native-方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#python-能不能调用-so-文件的-native-方法&#34;&gt;#&lt;/a&gt; Python 能不能调用 so 文件的 Native 方法？&lt;/h2&gt;
+&lt;p&gt;Python 也有类似 Unidbg 的工具&lt;a href=&#34;https://github.com/maiyao1988/ExAndroidNativeEmu&#34;&gt; ExAndroidNativeEmu - Python 工具 Unidbg 青春版功能有限&lt;/a&gt;，但是仅限于对&lt;strong&gt; JAVA 层的交互极少&lt;/strong&gt;，一旦涉及到 JNI 交互，则需要果断选择 Unidbg，在 Python 中补 JAVA 的逻辑，简直不是人该受的委屈。&lt;/p&gt;
+&lt;h1 id=&#34;密码学&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#密码学&#34;&gt;#&lt;/a&gt; 密码学&lt;/h1&gt;
+&lt;h2 id=&#34;加密算法大概率是开源或者魔改算法有没有快速验证的方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#加密算法大概率是开源或者魔改算法有没有快速验证的方法&#34;&gt;#&lt;/a&gt; 加密算法大概率是开源或者魔改算法有没有快速验证的方法？&lt;/h2&gt;
+&lt;p&gt;当在分析过程中有猜测或怀疑是某加密算法时可以使用类似&lt;a href=&#34;https://github.com/Pr0214/findhash&#34;&gt; findhash - IDA 脚本 可以检测出哈希算法&lt;/a&gt;的脚本，此脚本可检测无论是否魔改常数的 hash 算法 MD5，SHA1、SHA2。&lt;/p&gt;
+&lt;h1 id=&#34;汇编指令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#汇编指令&#34;&gt;#&lt;/a&gt; 汇编指令&lt;/h1&gt;
+&lt;h2 id=&#34;arm32-有-thumb-和-arm-两种指令模式如何确定&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#arm32-有-thumb-和-arm-两种指令模式如何确定&#34;&gt;#&lt;/a&gt; ARM32 有 Thumb 和 ARM 两种指令模式如何确定？&lt;/h2&gt;
+&lt;p&gt;最粗暴的方式就是试错法 module.callFunction 时不加 1 会报错非法指令则表示是 Thumb 模式&lt;br&gt;
+第二个办法是从知识角度出发，ARM 模式指令总是 4 字节长度，Thumb 指令长度多数为 2 字节，少部分指令是 4 字节。&lt;/p&gt;
+&lt;h1 id=&#34;unidbg&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#unidbg&#34;&gt;#&lt;/a&gt; Unidbg&lt;/h1&gt;
+&lt;h2 id=&#34;unidbg-的-jnionload-加载出的类是乱码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#unidbg-的-jnionload-加载出的类是乱码&#34;&gt;#&lt;/a&gt; Unidbg 的 Jnionload 加载出的类是乱码？&lt;/h2&gt;
+&lt;p&gt;so 做了字符串的混淆或加密，以此来对抗分析人员，但字符串总是要解密的，不然怎么用呢？这个解密一般发生在 Init array 节或者 JNI OnLoad 中，又或者是该字符串使用前的任何一个时机&lt;/p&gt;
+&lt;h2 id=&#34;对虚拟内存进行修改&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对虚拟内存进行修改&#34;&gt;#&lt;/a&gt; 对虚拟内存进行修改&lt;/h2&gt;
+&lt;p&gt;Unidbg 提供了两种方法打 Patch，简单的需求可以调用 Unicorn 对虚拟内存进行修改，如下&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;public void patchVerify()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    int patchCode = 0x4FF00100; //&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    emulator.getMemory().pointer(module.base + 0x1E86).setInt(0,patchCode);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;% tip warning %&amp;#125;需要注意的是，这儿地址可别+1了，Thumb的+1只在运行和Hook时需要考虑，打Patch可别想。&amp;#123;% endtip %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;补环境怎么补补什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#补环境怎么补补什么&#34;&gt;#&lt;/a&gt; 补环境怎么补补什么？&lt;/h2&gt;
+&lt;p&gt;我们既可以根据报错提示，在 AbstractJni 对应的函数体内，依葫芦画瓢，case &amp;quot;xxx“。&lt;br&gt;
+也可以在我们的 zuiyou 类中补，因为 zuiyou 类继承了 AbstractJNI。&lt;br&gt;
+关于补法，有两种实践方法都很有道理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;全部在用户类中补，防止项目迁移或者 Unidbg 更新带来什么问题，这样做代码的移植性比较好。&lt;/li&gt;
+&lt;li&gt;自定义 JAVA 方法在用户类中补，通用的方法在 AbstractJNI 中补，这样做的好处是，之后运行的项目如果调用通用方法，就不用做重复的修补工作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;如何主动调用一个-native-函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何主动调用一个-native-函数&#34;&gt;#&lt;/a&gt; 如何主动调用一个 Native 函数&lt;/h2&gt;
+&lt;p&gt;在 Frida 中可以使用 NativeFunction API 主动调用&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;function call_65540(base_addr)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // 函数在内存中的地址&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var real_addr = base_addr.add(0x65541)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var md5_function = new NativeFunction(real_addr, &amp;quot;int&amp;quot;, [&amp;quot;pointer&amp;quot;, &amp;quot;int&amp;quot;, &amp;quot;pointer&amp;quot;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // 参数1 明文字符串的指针&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var input = &amp;quot;r0ysue&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var arg1 = Memory.allocUtf8String(input);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // 参数2 明文长度&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var arg2 = input.length;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // 参数3，存放结果的buffer&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var arg3 = Memory.alloc(16);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    md5_function(arg1, arg2, arg3);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    console.log(hexdump(arg3,&amp;#123;length:0x10&amp;#125;));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;function callMd5()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // 确定SO 的基地址&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var base_addr = Module.findBaseAddress(&amp;quot;libnet_crypto.so&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    call_65540(base_addr);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// frida -UF -l path\hookright.js&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在 Unidbg 也是类似的，只不过换一下 API 罢了，让我们来看一下&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;public void callMd5()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    List&amp;lt;Object&amp;gt; list = new ArrayList&amp;lt;&amp;gt;(10);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // arg1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    String input = &amp;quot;r0ysue&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // malloc memory&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    MemoryBlock memoryBlock1 = emulator.getMemory().malloc(16, false);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // get memory pointer&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    UnidbgPointer input_ptr=memoryBlock1.getPointer();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // write plainText on it&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    input_ptr.write(input.getBytes(StandardCharsets.UTF_8));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // arg2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    int input_length = input.length();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // arg3 -- buffer&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    MemoryBlock memoryBlock2 = emulator.getMemory().malloc(16, false);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    UnidbgPointer output_buffer=memoryBlock2.getPointer();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // 填入参入&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    list.add(input_ptr);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    list.add(input_length);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    list.add(output_buffer);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // run&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    module.callFunction(emulator, 0x65540 + 1, list.toArray());&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    // print arg3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Inspector.inspect(output_buffer.getByteArray(0, 0x10), &amp;quot;output&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;需要注意，在 Unidbg 中，同样的功能有至少两种实现和写法 ——Unicorn 的原生方法以及 Unidbg 封装后的方法，在阅读别人代码时需要灵活变通。就好比 &lt;strong&gt;getR0long&lt;/strong&gt; 和&lt;strong&gt; emulator.getBackend ().reg_read (ArmConst.UC_ARM_REG_R0)&lt;/strong&gt;，它们都是获取寄存器 R0 的数值。&lt;/p&gt;
+&lt;h2 id=&#34;jnitrace-trace-我们在参数还没完全转换完的情况下unidbg-就退出了&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jnitrace-trace-我们在参数还没完全转换完的情况下unidbg-就退出了&#34;&gt;#&lt;/a&gt; JNItrace trace 我们在参数还没完全转换完的情况下，Unidbg 就退出了&lt;/h2&gt;
+&lt;p&gt;这种情况下，可能的原因有很多，但可能性较大的是两个&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;上下文环境缺失&lt;/li&gt;
+&lt;li&gt;样本使用某种手段检测或反制了 Unidbg&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;先看一下是否是上下文的问题，假设是上下文缺失，通俗的讲就是在 SO 加载后到我们的 main 函数调用前的这段时间里，样本需要调用一些函数对 SO 进行初始化，而我们没有注意也没做这个事，这导致了 Unidbg 无法顺利运行。&lt;/p&gt;
+&lt;h1 id=&#34;抓包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#抓包&#34;&gt;#&lt;/a&gt; 抓包&lt;/h1&gt;
+&lt;h2 id=&#34;对于服务器校验证书如何抓包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对于服务器校验证书如何抓包&#34;&gt;#&lt;/a&gt; 对于服务器校验证书如何抓包？&lt;/h2&gt;
+&lt;p&gt;安卓可以使用&lt;a href=&#34;https://github.com/r0ysue/r0capture&#34;&gt; r0capture - 安卓应用层抓包通杀脚本&lt;/a&gt;进行抓包分析。&lt;/p&gt;
+&lt;h1 id=&#34;验证码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证码&#34;&gt;#&lt;/a&gt; 验证码&lt;/h1&gt;
+&lt;h2 id=&#34;遇到验证码验证怎么办&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#遇到验证码验证怎么办&#34;&gt;#&lt;/a&gt; 遇到验证码验证怎么办？&lt;/h2&gt;
+&lt;p&gt;可以使用&lt;a href=&#34;https://github.com/sml2h3/ddddocr&#34;&gt; ddddocr - Python 库 通用验证码识别库&lt;/a&gt;进行识别，支持老版验证码，当前验证码支持部分滑块文字点选等。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
