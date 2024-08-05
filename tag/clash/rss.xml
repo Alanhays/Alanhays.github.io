@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Faceless Blog • Posts by &#34;clash&#34; tag</title>
+        <link>https://Alanhays.github.io</link>
+        <description>数据采集、逆向安全、网络杂谈</description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 17 Apr 2024 02:32:34 +0000</pubDate>
+        <lastBuildDate>Wed, 17 Apr 2024 02:32:34 +0000</lastBuildDate>
+        <category>AST</category>
+        <category>解混淆</category>
+        <category>nodejs</category>
+        <category>build</category>
+        <category>frida</category>
+        <category>jnitrace</category>
+        <category>objection</category>
+        <category>GitHub</category>
+        <category>Actions</category>
+        <category>TLS/SSL</category>
+        <category>JA3</category>
+        <category>JA4</category>
+        <category>证书</category>
+        <category>magisk</category>
+        <category>andorid</category>
+        <category>fastboot</category>
+        <category>root</category>
+        <category>charles</category>
+        <category>抓包</category>
+        <category>clash</category>
+        <category>加速乐</category>
+        <category>思路</category>
+        <category>SO</category>
+        <category>Native</category>
+        <category>入门级</category>
+        <category>windows</category>
+        <category>资源</category>
+        <category>疑难杂症</category>
+        <category>hexo</category>
+        <item>
+            <guid isPermalink="true">https://alanhays.github.io/posts/18615.html</guid>
+            <title>clash配置-轮询|散列模式</title>
+            <link>https://alanhays.github.io/posts/18615.html</link>
+            <category>clash</category>
+            <pubDate>Wed, 17 Apr 2024 02:32:34 +0000</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;一-在-clash-配置页面配置预处理配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-在-clash-配置页面配置预处理配置&#34;&gt;#&lt;/a&gt; 一、在 clash 配置页面配置预处理配置&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;parsers:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  - reg: &amp;#x27;slbable$&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    yaml:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      append-proxy-groups:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - name: ⚖️ 负载均衡-散列&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          type: load-balance&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          url: &amp;#x27;http://www.google.com/generate_204&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          interval: 300&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          strategy: consistent-hashing&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - name: ⚖️ 负载均衡-轮询&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          type: load-balance&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          url: &amp;#x27;http://www.google.com/generate_204&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          interval: 300&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          strategy: round-robin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      commands:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - proxy-groups.⚖️ 负载均衡-散列.proxies=[]proxyNames&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - proxy-groups.0.proxies.0+⚖️ 负载均衡-散列&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - proxy-groups.⚖️ 负载均衡-轮询.proxies=[]proxyNames&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - proxy-groups.0.proxies.0+⚖️ 负载均衡-轮询&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;二-重新下载配置文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-重新下载配置文件&#34;&gt;#&lt;/a&gt; 二、重新下载配置文件&lt;/h2&gt;
+&lt;p&gt;在配置 url 尾部添加  &lt;code&gt;#slbable&lt;/code&gt;  ，下载完成即可选择轮询与散列模式。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

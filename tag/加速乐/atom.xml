@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Alanhays.github.io</id>
+    <title>Faceless Blog • Posts by &#34;加速乐&#34; tag</title>
+    <link href="https://Alanhays.github.io" />
+    <updated>2023-11-08T09:00:04.000Z</updated>
+    <category term="AST" />
+    <category term="解混淆" />
+    <category term="nodejs" />
+    <category term="build" />
+    <category term="frida" />
+    <category term="jnitrace" />
+    <category term="objection" />
+    <category term="GitHub" />
+    <category term="Actions" />
+    <category term="TLS/SSL" />
+    <category term="JA3" />
+    <category term="JA4" />
+    <category term="证书" />
+    <category term="magisk" />
+    <category term="andorid" />
+    <category term="fastboot" />
+    <category term="root" />
+    <category term="charles" />
+    <category term="抓包" />
+    <category term="clash" />
+    <category term="加速乐" />
+    <category term="思路" />
+    <category term="SO" />
+    <category term="Native" />
+    <category term="入门级" />
+    <category term="windows" />
+    <category term="资源" />
+    <category term="疑难杂症" />
+    <category term="hexo" />
+    <entry>
+        <id>https://alanhays.github.io/posts/59917.html</id>
+        <title>加速乐逆向</title>
+        <link rel="alternate" href="https://alanhays.github.io/posts/59917.html"/>
+        <content type="html">&lt;h1 id=&#34;声明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#声明&#34;&gt;#&lt;/a&gt; 声明&lt;/h1&gt;
+&lt;p&gt;本逆向文章仅为学术交流和学习探讨之用，不代表任何官方立场或观点。文章内容仅供参考，读者应自行判断其真实性和可靠性。因使用本逆向文章而产生的任何直接或间接后果，本网站及作者不承担任何法律责任。请在使用本逆向文章前仔细阅读相关法律法规和条款，并确保您理解并接受本免责声明的全部内容。如有侵权行为或不当使用，请及时联系我们，我们将尽快处理。&lt;/p&gt;
+&lt;h1 id=&#34;逻辑分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#逻辑分析&#34;&gt;#&lt;/a&gt; 逻辑分析&lt;/h1&gt;
+&lt;p&gt;1.index.html 请求中有如下图两个 cookies。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1699435260379-8d57aed7-a002-4c53-900a-8e901924ed55.png#averageHue=%23eecd94&amp;amp;clientId=u282ecbe5-2f8d-4&amp;amp;from=paste&amp;amp;height=361&amp;amp;id=ub58af60e&amp;amp;originHeight=541&amp;amp;originWidth=1211&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=56461&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u407de983-9f7e-4f3f-9701-d447caf96f7&amp;amp;title=&amp;amp;width=807.3333333333334&#34; alt=&#34;image.png&#34;&gt; 2. 使用 charles 或其他抓包工具进行抓包，看到 index.html 进过三次加载，前两次是 521 状态。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1699435667713-255995fd-4aff-406e-ac33-4affeb7e17de.png#averageHue=%23f7e1de&amp;amp;clientId=u282ecbe5-2f8d-4&amp;amp;from=paste&amp;amp;height=136&amp;amp;id=u23357e78&amp;amp;originHeight=204&amp;amp;originWidth=865&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=31079&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u60a45c58-ce2e-4a95-b867-0424086eb04&amp;amp;title=&amp;amp;width=576.6666666666666&#34; alt=&#34;image.png&#34;&gt; 3. 第一次请求的  &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;  标签中进行了 cookie 设置，cookie 值如图是被混淆的。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1699435810175-43c64164-fe6d-4413-8154-30811e494725.png#averageHue=%23f6efee&amp;amp;clientId=u282ecbe5-2f8d-4&amp;amp;from=paste&amp;amp;height=325&amp;amp;id=ufda357d2&amp;amp;originHeight=487&amp;amp;originWidth=1180&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=45801&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ue94fa2eb-52a9-4c17-8129-1701b682529&amp;amp;title=&amp;amp;width=786.6666666666666&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 放到浏览器控制台中执行得到如下结果，发现 cookie 的 name 和成功响应带的 cookie 一致。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1699436504827-0fb474f3-f3eb-4741-8d17-d1b5599d2edb.png#averageHue=%23faf7f4&amp;amp;clientId=u282ecbe5-2f8d-4&amp;amp;from=paste&amp;amp;height=102&amp;amp;id=ud13a1a5c&amp;amp;originHeight=153&amp;amp;originWidth=1214&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=28179&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u3aaeb1cd-a0c5-40f1-bcd0-174321fdc63&amp;amp;title=&amp;amp;width=809.3333333333334&#34; alt=&#34;image.png&#34;&gt; 4. 第二次请求带上来第一次请求的 cookies-**jsl_clearance_s, 返回结果应该经过 ob 混淆的代码。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1699436659042-6623654a-c89e-417c-b09b-a69ac47db90e.png#averageHue=%23f5efed&amp;amp;clientId=u282ecbe5-2f8d-4&amp;amp;from=paste&amp;amp;height=468&amp;amp;id=u24249c79&amp;amp;originHeight=702&amp;amp;originWidth=1434&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=104332&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u5a8a3feb-42d2-41de-8ac6-e2571ee4df5&amp;amp;title=&amp;amp;width=956&#34; alt=&#34;image.png&#34;&gt; 5. 第三次成功响应，对比 cookies 发现，**jsl_clearance_s 变了，大概率是 ob 混淆文件对它做了修改。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1699436842758-691796cb-f12c-49cf-b8da-52cc6d5694cc.png#averageHue=%23f7f2f1&amp;amp;clientId=u282ecbe5-2f8d-4&amp;amp;from=paste&amp;amp;height=411&amp;amp;id=u95876b19&amp;amp;originHeight=616&amp;amp;originWidth=1418&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=81899&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u50247f49-082d-40ec-be6f-152b6dcebad&amp;amp;title=&amp;amp;width=945.3333333333334&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;请求实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#请求实现&#34;&gt;#&lt;/a&gt; 请求实现&lt;/h1&gt;
+&lt;p&gt;解完混淆代码逻辑清晰可见&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1699457082391-e396b4e4-0e34-4777-92d8-863d062d2dcb.png#averageHue=%23292e36&amp;amp;clientId=u797940c7-3ac3-4&amp;amp;from=paste&amp;amp;height=614&amp;amp;id=u6af0785e&amp;amp;originHeight=767&amp;amp;originWidth=1102&amp;amp;originalType=binary%E2%88%B6=1.25&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=131952&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u2c86d18d-ec14-47c7-86c5-e9540582e6e&amp;amp;title=&amp;amp;width=881.6&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;python-请求代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#python-请求代码&#34;&gt;#&lt;/a&gt; python 请求代码&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1699463090349-47df0f08-cc99-4b35-8fd4-294c07c81c4f.png#averageHue=%232d2c2c&amp;amp;clientId=u797940c7-3ac3-4&amp;amp;from=paste&amp;amp;height=515&amp;amp;id=u996c474e&amp;amp;originHeight=644&amp;amp;originWidth=772&amp;amp;originalType=binary%E2%88%B6=1.25&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=77500&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u3f430bd5-7c7c-4867-9ee6-e759fdfc7f9&amp;amp;title=&amp;amp;width=617.6&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完整代码仓库: &lt;a href=&#34;https://github.com/Alanhays/crawler/tree/main/SCDN_JSL&#34;&gt;https://github.com/Alanhays/crawler&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="解混淆" />
+        <category term="加速乐" />
+        <updated>2023-11-08T09:00:04.000Z</updated>
+    </entry>
+</feed>

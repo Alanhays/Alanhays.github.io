@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Alanhays.github.io</id>
+    <title>Faceless Blog • Posts by &#34;clash&#34; tag</title>
+    <link href="https://Alanhays.github.io" />
+    <updated>2024-04-17T02:32:34.000Z</updated>
+    <category term="AST" />
+    <category term="解混淆" />
+    <category term="nodejs" />
+    <category term="build" />
+    <category term="frida" />
+    <category term="jnitrace" />
+    <category term="objection" />
+    <category term="GitHub" />
+    <category term="Actions" />
+    <category term="TLS/SSL" />
+    <category term="JA3" />
+    <category term="JA4" />
+    <category term="证书" />
+    <category term="magisk" />
+    <category term="andorid" />
+    <category term="fastboot" />
+    <category term="root" />
+    <category term="charles" />
+    <category term="抓包" />
+    <category term="clash" />
+    <category term="加速乐" />
+    <category term="思路" />
+    <category term="SO" />
+    <category term="Native" />
+    <category term="入门级" />
+    <category term="windows" />
+    <category term="资源" />
+    <category term="疑难杂症" />
+    <category term="hexo" />
+    <entry>
+        <id>https://alanhays.github.io/posts/18615.html</id>
+        <title>clash配置-轮询|散列模式</title>
+        <link rel="alternate" href="https://alanhays.github.io/posts/18615.html"/>
+        <content type="html">&lt;h2 id=&#34;一-在-clash-配置页面配置预处理配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-在-clash-配置页面配置预处理配置&#34;&gt;#&lt;/a&gt; 一、在 clash 配置页面配置预处理配置&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;parsers:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  - reg: &amp;#x27;slbable$&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    yaml:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      append-proxy-groups:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - name: ⚖️ 负载均衡-散列&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          type: load-balance&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          url: &amp;#x27;http://www.google.com/generate_204&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          interval: 300&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          strategy: consistent-hashing&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - name: ⚖️ 负载均衡-轮询&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          type: load-balance&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          url: &amp;#x27;http://www.google.com/generate_204&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          interval: 300&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          strategy: round-robin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      commands:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - proxy-groups.⚖️ 负载均衡-散列.proxies=[]proxyNames&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - proxy-groups.0.proxies.0+⚖️ 负载均衡-散列&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - proxy-groups.⚖️ 负载均衡-轮询.proxies=[]proxyNames&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        - proxy-groups.0.proxies.0+⚖️ 负载均衡-轮询&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;二-重新下载配置文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-重新下载配置文件&#34;&gt;#&lt;/a&gt; 二、重新下载配置文件&lt;/h2&gt;
+&lt;p&gt;在配置 url 尾部添加  &lt;code&gt;#slbable&lt;/code&gt;  ，下载完成即可选择轮询与散列模式。&lt;/p&gt;
+</content>
+        <category term="clash" />
+        <updated>2024-04-17T02:32:34.000Z</updated>
+    </entry>
+</feed>

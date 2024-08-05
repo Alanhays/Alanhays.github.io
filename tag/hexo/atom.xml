@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Alanhays.github.io</id>
+    <title>Faceless Blog • Posts by &#34;hexo&#34; tag</title>
+    <link href="https://Alanhays.github.io" />
+    <updated>2023-10-09T01:26:58.000Z</updated>
+    <category term="AST" />
+    <category term="解混淆" />
+    <category term="nodejs" />
+    <category term="build" />
+    <category term="frida" />
+    <category term="jnitrace" />
+    <category term="objection" />
+    <category term="GitHub" />
+    <category term="Actions" />
+    <category term="TLS/SSL" />
+    <category term="JA3" />
+    <category term="JA4" />
+    <category term="证书" />
+    <category term="magisk" />
+    <category term="andorid" />
+    <category term="fastboot" />
+    <category term="root" />
+    <category term="charles" />
+    <category term="抓包" />
+    <category term="clash" />
+    <category term="加速乐" />
+    <category term="思路" />
+    <category term="SO" />
+    <category term="Native" />
+    <category term="入门级" />
+    <category term="windows" />
+    <category term="资源" />
+    <category term="疑难杂症" />
+    <category term="hexo" />
+    <entry>
+        <id>https://alanhays.github.io/posts/31158.html</id>
+        <title>语雀编写文章一键自动部署博客至Github和Gitee</title>
+        <link rel="alternate" href="https://alanhays.github.io/posts/31158.html"/>
+        <content type="html">&lt;h1 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h1&gt;
+&lt;p&gt;一键发布语雀文章至 github (hexo 博客) 和 gitee 并实现 gitee pages 自动更新。&lt;br&gt;
+hexo 博客示例：&lt;a href=&#34;https://alanhays.gitee.io/&#34;&gt;https://alanhays.gitee.io&lt;/a&gt; | &lt;a href=&#34;https://alanhays.github.io/&#34;&gt;https://alanhays.github.io&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;语雀编写文章&lt;/li&gt;
+&lt;li&gt;同步语雀文章至 hexo&lt;/li&gt;
+&lt;li&gt;hexo 发布语雀文章更新博客&lt;/li&gt;
+&lt;li&gt;github actions 自动同步仓库至 gitee 并更新 pages&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;部署-hexo-博客&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署-hexo-博客&#34;&gt;#&lt;/a&gt; 部署 hexo 博客&lt;/h1&gt;
+&lt;h2 id=&#34;安装-git-和-node推荐-lts-版&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装-git-和-node推荐-lts-版&#34;&gt;#&lt;/a&gt; 安装 git 和 node (推荐 LTS 版)&lt;/h2&gt;
+&lt;p&gt;git 官网 -&amp;gt; &lt;a href=&#34;https://git-scm.com/&#34;&gt;https://git-scm.com/&lt;/a&gt;&lt;br&gt;
+node 官网 -&amp;gt; &lt;a href=&#34;https://nodejs.org/en&#34;&gt;https://nodejs.org/en&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;检查安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#检查安装&#34;&gt;#&lt;/a&gt; 检查安装&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696815879153-89905aee-a4f4-4351-b2be-a418d5289a1f.png#averageHue=%231c1c1c&amp;amp;clientId=uc8e77ead-24d0-4&amp;amp;from=paste&amp;amp;height=213&amp;amp;id=ua6097101&amp;amp;originHeight=320&amp;amp;originWidth=580&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=28256&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u9f0dc45d-8f83-4494-99cf-6158fcd1a8d&amp;amp;title=&amp;amp;width=386.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装-hexo-博客&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装-hexo-博客&#34;&gt;#&lt;/a&gt; 安装 hexo 博客&lt;/h2&gt;
+&lt;p&gt;找到一个位置，打开&lt;strong&gt; Git Bash Here&lt;/strong&gt; 分别执行下面命令，其中 blog 可替换为你喜欢的名字（会在当前目录新建一个文件夹）&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo init blog&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cd&lt;/span&gt; blog&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo s&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;验证博客&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证博客&#34;&gt;#&lt;/a&gt; 验证博客&lt;/h3&gt;
+&lt;p&gt;浏览器打开 -&amp;gt; &lt;a href=&#34;http://localhost:4000/&#34;&gt;http://localhost:4000/&lt;/a&gt;&lt;br&gt;
+ 打开后正常显示 hexo 默认博客&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696819368453-729a4ca6-bbb8-4c85-8bca-ededef4785b6.png#averageHue=%23bfb8a8&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=756&amp;amp;id=u8acbc7b7&amp;amp;originHeight=1134&amp;amp;originWidth=2218&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=759300&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u10ac20be-540d-4353-b093-d570559a31c&amp;amp;title=&amp;amp;width=1478.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;hexo-常用命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hexo-常用命令&#34;&gt;#&lt;/a&gt; hexo 常用命令&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo -g &lt;span class=&#34;comment&#34;&gt;# 安装Hexo&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm update hexo -g &lt;span class=&#34;comment&#34;&gt;# 升级&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo init blog &lt;span class=&#34;comment&#34;&gt;# 初始化博客 blog(选填) 创建一个名为blog的目录并初始化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;命令简写&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo n &lt;span class=&#34;string&#34;&gt;&amp;quot;文章名&amp;quot;&lt;/span&gt; == hexo new &lt;span class=&#34;string&#34;&gt;&amp;quot;文章名&amp;quot;&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 新建文章&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo g == hexo generate &lt;span class=&#34;comment&#34;&gt;# 生成&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo s == hexo server &lt;span class=&#34;comment&#34;&gt;# 启动服务预览&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo d == hexo deploy &lt;span class=&#34;comment&#34;&gt;# 部署&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo server &lt;span class=&#34;comment&#34;&gt;# Hexo会监视文件变动并自动更新，无须重启服务器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo server -s &lt;span class=&#34;comment&#34;&gt;# 静态模式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo server -p xxxx &lt;span class=&#34;comment&#34;&gt;# 更改端口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo server -i xxx.xxx.x.x &lt;span class=&#34;comment&#34;&gt;# 自定义IP&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo clean &lt;span class=&#34;comment&#34;&gt;#清除缓存&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;github-创建仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#github-创建仓库&#34;&gt;#&lt;/a&gt; GitHub 创建仓库&lt;/h2&gt;
+&lt;p&gt;仓库名称格式&lt;strong&gt;&lt;a href=&#34;http://xn--6qqv7i14ofosyrb.github.io&#34;&gt;你的用户名.github.io&lt;/a&gt;&lt;/strong&gt; 比如我这里应该写&lt;strong&gt;&lt;a href=&#34;http://alanhays.github.io&#34;&gt; alanhays.github.io&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696820476904-24a7e455-bb29-4ee7-a0ec-aacac1cc62b4.png#averageHue=%23fefdfd&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=460&amp;amp;id=u1000ab60&amp;amp;originHeight=690&amp;amp;originWidth=1260&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=82131&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u349313ab-c457-4cbf-820b-5ca8a554e1d&amp;amp;title=&amp;amp;width=840&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;生成秘钥公钥&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#生成秘钥公钥&#34;&gt;#&lt;/a&gt; 生成秘钥 &amp;amp; 公钥&lt;/h3&gt;
+&lt;p&gt;打开&lt;strong&gt; Git Bash Here&lt;/strong&gt; 执行以下命令&lt;br&gt;
+ yourname 改为你的 GitHub 的&lt;strong&gt;用户名&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight verilog&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git &lt;span class=&#34;keyword&#34;&gt;config&lt;/span&gt; --&lt;span class=&#34;keyword&#34;&gt;global&lt;/span&gt; user&lt;span class=&#34;variable&#34;&gt;.name&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;yourname&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;youremail 改为你的注册 GitHub 时的&lt;strong&gt;邮箱&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight verilog&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git &lt;span class=&#34;keyword&#34;&gt;config&lt;/span&gt; --&lt;span class=&#34;keyword&#34;&gt;global&lt;/span&gt; user&lt;span class=&#34;variable&#34;&gt;.email&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;youremail&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;创建 ssh，输入命令，然后一直回车&lt;br&gt;
+ youremail 改为你的注册 GitHub 时的&lt;strong&gt;邮箱&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ssh-keygen -t rsa -C &lt;span class=&#34;string&#34;&gt;&amp;quot;youremail&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在文件中找到这个路径  &lt;code&gt;C:\Users\你的用户名\.ssh&lt;/code&gt; &lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696820209329-78aafc54-a4df-43ef-a591-a54c4cec435a.png#averageHue=%23fcfbfb&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=335&amp;amp;id=uba970c23&amp;amp;originHeight=503&amp;amp;originWidth=1250&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=36653&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u534f1422-c83c-405d-8185-eb299a09a6f&amp;amp;title=&amp;amp;width=833.3333333333334&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 在 GitHub 的 Setting 里面，找到 SSH keys，把 &lt;strong&gt;id_rsa.pub（公钥）&lt;/strong&gt; 里面的内容全部复制到 &lt;strong&gt;key&lt;/strong&gt; 进去，&lt;strong&gt;title&lt;/strong&gt; 随便写即可。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696820340389-82002c4f-34f7-457b-aac5-c75fcf8d994f.png#averageHue=%23dfc7a0&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=685&amp;amp;id=ub6910e9b&amp;amp;originHeight=1028&amp;amp;originWidth=2229&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=144401&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=uaefb561a-cb11-4cfe-ab93-f4ae3537603&amp;amp;title=&amp;amp;width=1486&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hexo-部署到-github&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hexo-部署到-github&#34;&gt;#&lt;/a&gt; hexo 部署到 GitHub&lt;/h2&gt;
+&lt;p&gt;在 blog 文件夹下面找到_config.yml 文件&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696820656627-84e947a3-c369-4f3a-9ca3-ee3dfdfabe6b.png#averageHue=%23fcfbfa&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=385&amp;amp;id=u7ca5a152&amp;amp;originHeight=577&amp;amp;originWidth=1045&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=50703&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=uaf75b89f-b16b-4853-ae00-c0e5500ef7c&amp;amp;title=&amp;amp;width=696.6666666666666&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 在末尾找到 deploy 并修改（以文本格式打开 vscode 或记事本都可）&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696821058208-c025b513-dce0-4127-bfad-b9aa2e70aa06.png#averageHue=%23232221&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=110&amp;amp;id=uc7880959&amp;amp;originHeight=165&amp;amp;originWidth=1286&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=18076&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u03b5f1ea-e6bf-4b58-a1e8-cb971878019&amp;amp;title=&amp;amp;width=857.3333333333334&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+yourname 改为你的&lt;strong&gt; GitHub 的用户名&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;built_in&#34;&gt;type&lt;/span&gt;: git&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  repo: git@github.com:yourname/yourname.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;打开 &lt;strong&gt;Git Bash Here&lt;/strong&gt; 安装 git 部署命令工具&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install hexo-deployer-git --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;分别输入以下命令&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo g&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;开启-github-pages-服务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开启-github-pages-服务&#34;&gt;#&lt;/a&gt; 开启 GitHub Pages 服务&lt;/h3&gt;
+&lt;p&gt;打开你的仓库 &lt;strong&gt;&lt;a href=&#34;http://xn--6qqv7i14ofosyrb.github.io&#34;&gt;你的用户名.github.io&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696821614735-b5d5d0f0-9a0f-4b59-93f1-801150eee96c.png#averageHue=%23e3c9a3&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=659&amp;amp;id=u284e1f5c&amp;amp;originHeight=988&amp;amp;originWidth=1524&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=171184&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ub1485883-ea5f-4b69-96f0-ae5b57aa0e0&amp;amp;title=&amp;amp;width=1016&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 按照步骤操作开启 Pages&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696821772577-05048722-563c-47be-bd46-b6d4932eec52.png#averageHue=%23fdfdfd&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=799&amp;amp;id=u4baa7511&amp;amp;originHeight=1198&amp;amp;originWidth=2229&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=219642&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u79720bf3-878c-491c-9aa1-ae6410f729b&amp;amp;title=&amp;amp;width=1486&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 完成后等待一会，你可看到如下页面，点击&lt;strong&gt; Visit site&lt;/strong&gt; 查看你的博客&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696821907600-a75b2eb4-b1a7-4b96-bcc1-c7b253012d83.png#averageHue=%23fefefd&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=469&amp;amp;id=uf01d3533&amp;amp;originHeight=703&amp;amp;originWidth=1729&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=112852&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=udb7a02b2-137a-4a50-bb79-2d7b21db56b&amp;amp;title=&amp;amp;width=1152.6666666666667&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hexo-主题配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hexo-主题配置&#34;&gt;#&lt;/a&gt; hexo 主题配置&lt;/h2&gt;
+&lt;p&gt;推荐在主题市场选择喜欢的主题，主题中都有详细的使用教程。&lt;br&gt;
+优质主题（排序不分先后）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/anzhiyu-c/hexo-theme-anzhiyu&#34;&gt;anzhiyu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/auroral-ui/hexo-theme-aurora&#34;&gt;aurora&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/amehime/hexo-theme-shoka&#34;&gt;shoka&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;主题市场 &lt;a href=&#34;https://hexo.io/themes/&#34;&gt;https://hexo.io/themes/&lt;/a&gt;&lt;br&gt;
+ 创作主题教程 &lt;a href=&#34;https://hexo.io/zh-cn/docs/themes.html&#34;&gt;https://hexo.io/zh-cn/docs/themes.html&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;同步语雀文章&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#同步语雀文章&#34;&gt;#&lt;/a&gt; 同步语雀文章&lt;/h1&gt;
+&lt;p&gt;项目：&lt;a href=&#34;https://github.com/x-cold/yuque-hexo&#34;&gt;https://github.com/x-cold/yuque-hexo&lt;/a&gt;&lt;br&gt;
+ 注：教程请看项目就不赘述了&lt;/p&gt;
+&lt;h1 id=&#34;github-actions-自动同步&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#github-actions-自动同步&#34;&gt;#&lt;/a&gt; GitHub Actions 自动同步&lt;/h1&gt;
+&lt;p&gt;项目：&lt;a href=&#34;https://github.com/yanglbme/gitee-pages-action&#34;&gt;https://github.com/yanglbme/gitee-pages-action&lt;/a&gt;&lt;br&gt;
+ 注：教程请看项目就不赘述了，存放 &lt;code&gt;./github/workflows/xxx.yml&lt;/code&gt;  位置请看本文。&lt;/p&gt;
+&lt;h3 id=&#34;hexo-项目-github-actions-存放位置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hexo-项目-github-actions-存放位置&#34;&gt;#&lt;/a&gt; hexo 项目 GitHub Actions 存放位置&lt;/h3&gt;
+&lt;p&gt;gitee 仓库依靠 GitHub Actions  &lt;code&gt;./github/workflows/xxx.yml&lt;/code&gt;  实现&lt;br&gt;
+需要将  &lt;code&gt;./github/workflows/xxx.yml&lt;/code&gt;  放置 &lt;code&gt;.deploy_git/.github/workflows/xxx.yml&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;./github/workflows/xxx.yml&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;.deploy_git/.github/workflows/xxx.yml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如此 hexo d 命令推送时才会将 Actions 文件推送&lt;/p&gt;
+&lt;h1 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h1&gt;
+&lt;p&gt;1. 使用下面命令同步语雀最新文章，其中 xxx… 为 token 或 key。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;set&lt;/span&gt; YUQUE_TOKEN=xxx SECRET_ID=xxx SECRET_KEY=xxx &amp;amp;&amp;amp; yuque-hexo &lt;span class=&#34;built_in&#34;&gt;sync&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2. 使用以下两个命令构建和部署博客&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo g&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;执行完后等待 2-3 分钟博客就更新了，如果 github 更新了，gitee 没有那么请查看 GitHub Actions 详细日志，可能因为网络不稳定导致 GitHub Actions 执行失败，请手动执行或再次推送。&lt;/p&gt;
+&lt;h2 id=&#34;我的实现一键更新博客参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#我的实现一键更新博客参考&#34;&gt;#&lt;/a&gt; 我的实现一键更新博客（参考）&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我将变量设置为用户环境变量，相对不可见，变量名&lt;strong&gt;不可自定义&lt;/strong&gt; YUQUE_TOKEN = 你的语雀 token (可读权限)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo clean &amp;amp;&amp;amp; yuque-hexo sync &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo algolia &amp;amp;&amp;amp; hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;查看-github-actions-详细日志&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看-github-actions-详细日志&#34;&gt;#&lt;/a&gt; 查看 GitHub Actions 详细日志&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696823576435-1a74066e-da49-448e-be1c-583f401dfc39.png#averageHue=%23d0ac81&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=680&amp;amp;id=u3c7ad423&amp;amp;originHeight=1020&amp;amp;originWidth=1121&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=134461&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=uc96bcb4b-6e76-40d1-85c2-247cb13607a&amp;amp;title=&amp;amp;width=747.3333333333334&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1696823528572-b6272d05-57d4-42cd-b19d-67c888f754be.png#averageHue=%23eff1c9&amp;amp;clientId=u261f4155-1b47-4&amp;amp;from=paste&amp;amp;height=551&amp;amp;id=u6d703f49&amp;amp;originHeight=826&amp;amp;originWidth=1189&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=73500&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u834a05d4-7b34-4587-931b-543b02d52a6&amp;amp;title=&amp;amp;width=792.6666666666666&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="GitHub" />
+        <category term="hexo" />
+        <updated>2023-10-09T01:26:58.000Z</updated>
+    </entry>
+</feed>

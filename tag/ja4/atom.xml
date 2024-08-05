@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Alanhays.github.io</id>
+    <title>Faceless Blog • Posts by &#34;ja4&#34; tag</title>
+    <link href="https://Alanhays.github.io" />
+    <updated>2023-10-21T01:31:26.000Z</updated>
+    <category term="AST" />
+    <category term="解混淆" />
+    <category term="nodejs" />
+    <category term="build" />
+    <category term="frida" />
+    <category term="jnitrace" />
+    <category term="objection" />
+    <category term="GitHub" />
+    <category term="Actions" />
+    <category term="TLS/SSL" />
+    <category term="JA3" />
+    <category term="JA4" />
+    <category term="证书" />
+    <category term="magisk" />
+    <category term="andorid" />
+    <category term="fastboot" />
+    <category term="root" />
+    <category term="charles" />
+    <category term="抓包" />
+    <category term="clash" />
+    <category term="加速乐" />
+    <category term="思路" />
+    <category term="SO" />
+    <category term="Native" />
+    <category term="入门级" />
+    <category term="windows" />
+    <category term="资源" />
+    <category term="疑难杂症" />
+    <category term="hexo" />
+    <entry>
+        <id>https://alanhays.github.io/posts/50497.html</id>
+        <title>TLS指纹-JA4</title>
+        <link rel="alternate" href="https://alanhays.github.io/posts/50497.html"/>
+        <content type="html">&lt;h2 id=&#34;官方解释&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#官方解释&#34;&gt;#&lt;/a&gt; 官方解释&lt;/h2&gt;
+&lt;p&gt;JA4 + 是一套易于使用和共享的网络指纹识别方法。这些方法既是人类可读的，也是机器可读的，以促进更有效的威胁搜寻和分析。这些指纹的用例包括扫描威胁参与者、恶意软件检测、会话劫持预防、合规性自动化、位置跟踪、DDoS 检测、威胁参与者分组、反向外壳检测等等。&lt;br&gt;
+JA4 系列 ：JA4/S/H/L/X/SSH，简称 JA4+&lt;br&gt;
+&lt;a href=&#34;https://blog.foxio.io/ja4-network-fingerprinting-9376fe9ca637&#34;&gt; 官方介绍&lt;/a&gt; | &lt;a href=&#34;https://github.com/FoxIO-LLC/ja4&#34;&gt;JA4 指纹&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;初始指纹：&lt;br&gt;
+JA4 — TLS 客户端 JA4S — TLS 服务器响应&lt;br&gt;
+ JA4H — HTTP 客户端&lt;/p&gt;
+&lt;p&gt;JA4L — 光距离 / 位置&lt;br&gt;
+ JA4X — X509 TLS 证书&lt;br&gt;
+ JA4SSH — SSH 流量&lt;br&gt;
+更多指纹正在开发中，并将在发布时添加到 JA4+ 系列中。&lt;/p&gt;
+&lt;p&gt;例子&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/webp/26634545/1697868649851-fc1d1b6c-4298-41cf-a8d5-28962645cc50.webp#averageHue=%23eaeaea&amp;amp;clientId=ucffaa756-14f5-4&amp;amp;from=ui&amp;amp;id=u5b1e2317&amp;amp;originHeight=496&amp;amp;originWidth=614&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=40140&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ubf96421a-4174-421d-b1c4-b2abffba38f&amp;amp;title=&#34; alt=&#34;1_ouP7r5IlQoTmameDpppq4g.webp&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h1&gt;
+</content>
+        <category term="TLS/SSL" />
+        <category term="JA4" />
+        <updated>2023-10-21T01:31:26.000Z</updated>
+    </entry>
+</feed>

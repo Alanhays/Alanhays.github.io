@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Alanhays.github.io</id>
+    <title>Faceless Blog • Posts by &#34;ja3&#34; tag</title>
+    <link href="https://Alanhays.github.io" />
+    <updated>2023-10-21T00:38:54.000Z</updated>
+    <category term="AST" />
+    <category term="解混淆" />
+    <category term="nodejs" />
+    <category term="build" />
+    <category term="frida" />
+    <category term="jnitrace" />
+    <category term="objection" />
+    <category term="GitHub" />
+    <category term="Actions" />
+    <category term="TLS/SSL" />
+    <category term="JA3" />
+    <category term="JA4" />
+    <category term="证书" />
+    <category term="magisk" />
+    <category term="andorid" />
+    <category term="fastboot" />
+    <category term="root" />
+    <category term="charles" />
+    <category term="抓包" />
+    <category term="clash" />
+    <category term="加速乐" />
+    <category term="思路" />
+    <category term="SO" />
+    <category term="Native" />
+    <category term="入门级" />
+    <category term="windows" />
+    <category term="资源" />
+    <category term="疑难杂症" />
+    <category term="hexo" />
+    <entry>
+        <id>https://alanhays.github.io/posts/1792.html</id>
+        <title>TLS指纹-JA3</title>
+        <link rel="alternate" href="https://alanhays.github.io/posts/1792.html"/>
+        <content type="html">&lt;h2 id=&#34;官方解释&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#官方解释&#34;&gt;#&lt;/a&gt; 官方解释&lt;/h2&gt;
+&lt;p&gt;TLS 及其前身 SSL 用于为常见应用程序和恶意软件加密通信，以确保数据安全，因此可以隐藏在噪音中。要启动 TLS 会话，客户端将在 TCP 3 次握手之后发送 TLS 客户端 Hello 数据包。此数据包及其生成方式取决于构建客户端应用程序时使用的包和方法。服务器如果接受 TLS 连接，将使用基于服务器端库和配置以及 Client Hello 中的详细信息制定的 TLS Server Hello 数据包进行响应。由于 TLS 协商以明文形式传输，因此可以使用 TLS Client Hello 数据包中的详细信息来指纹和识别客户端应用程序。&lt;br&gt;
+&lt;a href=&#34;https://engineering.salesforce.com/open-sourcing-ja3-92c9e53c3c41/&#34;&gt;官方介绍&lt;/a&gt; | &lt;a href=&#34;https://github.com/FoxIO-LLC/ja3&#34;&gt;JA3 指纹&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ja3-原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ja3-原理&#34;&gt;#&lt;/a&gt; JA3 原理&lt;/h2&gt;
+&lt;p&gt;JA3 收集以下字段的字节的十进制值；SSL 版本、接受的密码、扩展列表、椭圆曲线和椭圆曲线格式。然后，它按顺序将这些值连接在一起，使用 “，” 分隔每个字段，使用 “-” 分隔每个字段中的每个值。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/webp/26634545/1697851217544-efd479ce-e2f9-4582-8895-e2efe95fe3f5.webp#averageHue=%23f0efee&amp;amp;clientId=u9d6790ac-ed8c-4&amp;amp;from=paste&amp;amp;height=837&amp;amp;id=u1dbfb620&amp;amp;originHeight=1256&amp;amp;originWidth=1354&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=594364&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u22261562-ea35-4516-8852-7a2c8ad84f0&amp;amp;title=&amp;amp;width=902.6666666666666&#34; alt=&#34;0_QZ7tsC7MAET5lbLP.webp&#34;&gt;&lt;br&gt;
+ 字段顺序如下：&lt;br&gt;
+SSLVersion，密码，扩展，椭圆曲线，椭圆曲线点格式&lt;br&gt;
+例：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;769,47–53–5–10–49161–49162–49171–49172–50–56–19–4,0–10–11,23–24–25,0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果客户端 Hello 中没有 SSL 扩展，则字段留空。&lt;br&gt;
+例：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;769,4–5–10–9–100–98–3–6–19–18–99,,,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后对这些字符串进行 MD5 哈希处理，以生成易于使用和共享的 32 个字符的指纹。这是 JA3 SSL 客户端指纹。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;769,47–53–5–10–49161–49162–49171–49172–50–56–19–4,0–10–11,23–24–25,0 → ada70206e40642a3e4461f35503241d5769,4–5–10–9–100–98–3–6–19–18–99,,,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;→ de350869b8c85de67a350c8d186f11e6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;我们还需要引入一些代码来解释 Google 的 GREASE（生成随机扩展和维持可扩展性），&lt;a href=&#34;https://tools.ietf.org/html/draft-davidben-tls-grease-01&#34;&gt;如此处&lt;/a&gt;所述。Google 将此用作防止 TLS 生态系统中扩展性失败的机制。JA3 完全忽略这些值，以确保使用 GREASE 的程序仍可以使用单个 JA3 哈希进行标识。&lt;/p&gt;
+&lt;h2 id=&#34;tls-检测判断&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tls-检测判断&#34;&gt;#&lt;/a&gt; TLS 检测判断&lt;/h2&gt;
+&lt;h3 id=&#34;tls-检测原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tls-检测原理&#34;&gt;#&lt;/a&gt; TLS 检测原理&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;抓包工具 wireshark、charles 只能查看 TLS 指纹，不能以此判断服务器检测了 TLS。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 HTTPS 协议中，TLS 协议是用来在客户端和服务器之间建立安全连接的，这个连接过程中就会生成 TLS 指纹。只要是 HTTPS 协议，必定会生成 TLS 指纹。&lt;br&gt;
+检测 TLS 是在服务端进行的，&lt;strong&gt;唯一&lt;/strong&gt;判断是否检测 TLS 的手段就是&lt;strong&gt;测试&lt;/strong&gt;和&lt;strong&gt;猜测&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;未检测-tls&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#未检测-tls&#34;&gt;#&lt;/a&gt; 未检测 TLS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;验证请求头顺序&lt;/li&gt;
+&lt;li&gt;检测 HTTP2.0&lt;/li&gt;
+&lt;li&gt;curl 生成 code 可直接访问&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;检测了-tls&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#检测了-tls&#34;&gt;#&lt;/a&gt; 检测了 TLS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;curl、api 调试工具、js 有可响应的就 python 不行。&lt;/li&gt;
+&lt;li&gt;curl、js 都不行就浏览器可以。&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;过校验示例&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#过校验示例&#34;&gt;#&lt;/a&gt; 过校验示例&lt;/h2&gt;
+&lt;p&gt;python 的 aiohttp | requests | httpx | scrapy 和 golang 相关的 ja3 指纹修改案例。&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/png/26634545/1697867423544-d0cb481b-b803-4d8f-bc21-fec7ac4f18fd.png#averageHue=%23f4f2ef&amp;amp;clientId=u44708746-5fd9-4&amp;amp;from=paste&amp;amp;height=101&amp;amp;id=uc8e0d242&amp;amp;originHeight=152&amp;amp;originWidth=270&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=6334&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u48dd73f9-af7e-439c-8eae-ced91e6bee8&amp;amp;title=&amp;amp;width=180&#34; alt=&#34;image.png&#34;&gt;&lt;br&gt;
+ 笔者整理的一些案例：&lt;br&gt;
+&lt;a href=&#34;https://pan.baidu.com/s/1MEMMZTNg-6qmPrzprHVSVQ?pwd=k999&#34;&gt;JA3 指纹（go/python）点击下载&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="TLS/SSL" />
+        <category term="JA3" />
+        <updated>2023-10-21T00:38:54.000Z</updated>
+    </entry>
+</feed>

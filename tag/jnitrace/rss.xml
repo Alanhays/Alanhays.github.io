@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Faceless Blog • Posts by &#34;jnitrace&#34; tag</title>
+        <link>https://Alanhays.github.io</link>
+        <description>数据采集、逆向安全、网络杂谈</description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 18 Dec 2023 07:59:47 +0000</pubDate>
+        <lastBuildDate>Mon, 18 Dec 2023 07:59:47 +0000</lastBuildDate>
+        <category>AST</category>
+        <category>解混淆</category>
+        <category>nodejs</category>
+        <category>build</category>
+        <category>frida</category>
+        <category>jnitrace</category>
+        <category>objection</category>
+        <category>GitHub</category>
+        <category>Actions</category>
+        <category>TLS/SSL</category>
+        <category>JA3</category>
+        <category>JA4</category>
+        <category>证书</category>
+        <category>magisk</category>
+        <category>andorid</category>
+        <category>fastboot</category>
+        <category>root</category>
+        <category>charles</category>
+        <category>抓包</category>
+        <category>clash</category>
+        <category>加速乐</category>
+        <category>思路</category>
+        <category>SO</category>
+        <category>Native</category>
+        <category>入门级</category>
+        <category>windows</category>
+        <category>资源</category>
+        <category>疑难杂症</category>
+        <category>hexo</category>
+        <item>
+            <guid isPermalink="true">https://alanhays.github.io/posts/8117.html</guid>
+            <title>Frida三板斧的安装配置与基本使用</title>
+            <link>https://alanhays.github.io/posts/8117.html</link>
+            <category>frida</category>
+            <category>jnitrace</category>
+            <category>objection</category>
+            <pubDate>Mon, 18 Dec 2023 07:59:47 +0000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;frida&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#frida&#34;&gt;#&lt;/a&gt; Frida&lt;/h1&gt;
+&lt;p&gt;面向开发人员、逆向工程师和安全研究人员的动态检测工具包。&lt;br&gt;
+frida 文档：&lt;a href=&#34;https://frida.re/docs/home/&#34;&gt;https://frida.re/docs/home/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;对应版本&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对应版本&#34;&gt;#&lt;/a&gt; 对应版本&lt;/h2&gt;
+&lt;p&gt;frida&amp;amp;frida-tools 版本对应查看 ：&lt;a href=&#34;https://github.com/frida/frida/releases&#34;&gt;frida-releases&lt;/a&gt;&lt;br&gt;
+ 找到你使用 frida 的版本，查看其版本下&lt;strong&gt; frida-tools&lt;/strong&gt; 的版本，它们就是对应版本。（建议多准备几个 Python 与 firda 的版本，因为它并不稳定）&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;pip install frida==14.2.13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;pip install frida-tools==9.2.1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2023/gif/26634545/1702889862515-455c0fb7-9dc7-4854-a6d6-c94c36b24e9e.gif#averageHue=%23fcfbfb&amp;amp;clientId=ua9a61f28-e353-4&amp;amp;from=drop&amp;amp;id=u694dfb9e&amp;amp;originHeight=1363&amp;amp;originWidth=2038&amp;amp;originalType=binary%E2%88%B6=1.5&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=5812512&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u5b43f4cc-ded4-442f-9e7d-b7f790a8823&amp;amp;title=&#34; alt=&#34;PixPin_2023-12-18_16-57-12.gif&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;frida-server&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#frida-server&#34;&gt;#&lt;/a&gt; frida-server&lt;/h2&gt;
+&lt;p&gt;安卓手机需要安装 frida-server，版本与 frida&lt;strong&gt; 版本需一致&lt;/strong&gt;，根据&lt;strong&gt;设备架构&lt;/strong&gt;选择 x86 或 arm 等。&lt;br&gt;
+&lt;strong&gt;解压文件&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;7x x frida-server.xz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;启动 frida-server&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adb root&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adb push frida-server /data/local/tmp/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adb shell &amp;quot;chmod 755 /data/local/tmp/frida-server&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adb shell &amp;quot;/data/local/tmp/frida-server&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;测试服务&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;frida-ps -U  // 查看正在运行进程&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;显示如下内容则表示服务启动，手机&lt;strong&gt;重启&lt;/strong&gt;后&lt;strong&gt;需&lt;/strong&gt;要&lt;strong&gt;再次&lt;/strong&gt;执行命令&lt;strong&gt;启动&lt;/strong&gt;。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;  PID NAME&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; 1590 com.xxx.xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13194 com.xxxx.xxxxx&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;…&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;常用命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#常用命令&#34;&gt;#&lt;/a&gt; 常用命令&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;frida -FU packagename -l hookscript.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;jnitrace&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jnitrace&#34;&gt;#&lt;/a&gt; Jnitrace&lt;/h1&gt;
+&lt;p&gt;JNItrace 是一个基于 Frida 框架的&lt;strong&gt; Hook jni&lt;/strong&gt; 方法的库。&lt;a href=&#34;https://github.com/chame1eon/jnitrace&#34;&gt;https://github.com/chame1eon/jnitrace&lt;/a&gt;&lt;br&gt;
+Python &lt;strong&gt;安装&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;pip install jnitrace   &lt;span class=&#34;comment&#34;&gt;// 需要frida版本14以上&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;依赖&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#依赖&#34;&gt;#&lt;/a&gt; 依赖：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;arm、arm64、x86 或 x64 Android 设备&lt;/li&gt;
+&lt;li&gt;Frida 安装在 Android 设备上&lt;/li&gt;
+&lt;li&gt;Frida 支持 &amp;gt; 14&lt;/li&gt;
+&lt;li&gt;使用 Python 3 和 pip 的 Linux、Mac 或 Windows 主机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;启动命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#启动命令&#34;&gt;#&lt;/a&gt; 启动命令：&lt;/h2&gt;
+&lt;p&gt;两个参数分别为&lt;strong&gt;待分析的 SO&lt;/strong&gt; 与&lt;strong&gt; APP 包名&lt;/strong&gt;。-l 参数可以多次使用  &lt;code&gt;-l libname.so -l libname1.so ...&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;jnitrace -l libname.so packagename&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;默认使用  &lt;code&gt;spawn&lt;/code&gt;  启动，可以通过  &lt;code&gt;-m attach&lt;/code&gt;  设置通过  &lt;code&gt;attach&lt;/code&gt;  启。&lt;/p&gt;
+&lt;figure class=&#34;highlight latex&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;jnitrace -m attach -l libname.so packagename&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;  导出 log 日志保存至文件，控制台将不输出 log。&lt;br&gt;
+例： &lt;code&gt;jnitrace -l libname packagename &amp;gt;&amp;gt; jnitrace.txt&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;objection&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#objection&#34;&gt;#&lt;/a&gt; objection&lt;/h1&gt;
+&lt;h1 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h1&gt;
+&lt;p&gt;官方安装教程：&lt;a href=&#34;https://github.com/sensepost/objection/wiki/Installation&#34;&gt;https://github.com/sensepost/objection/wiki/Installation&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;pip3 install -U objection&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在内存中所有已加载的类中搜索包含特定关键词的类&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;android hooking search classes&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;hook java 方法&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;android hooking watch class_method &amp;lt;methodName&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;hook java 类&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;android hooking watch class &amp;lt;classname&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;列出进程所有的 activity&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;android hooking list activities&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

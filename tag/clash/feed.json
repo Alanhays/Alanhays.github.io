@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Faceless Blog • All posts by \"clash\" tag",
+    "description": "数据采集、逆向安全、网络杂谈",
+    "home_page_url": "https://Alanhays.github.io",
+    "items": [
+        {
+            "id": "https://alanhays.github.io/posts/18615.html",
+            "url": "https://alanhays.github.io/posts/18615.html",
+            "title": "clash配置-轮询|散列模式",
+            "date_published": "2024-04-17T02:32:34.000Z",
+            "content_html": "<h2 id=\"一-在-clash-配置页面配置预处理配置\"><a class=\"markdownIt-Anchor\" href=\"#一-在-clash-配置页面配置预处理配置\">#</a> 一、在 clash 配置页面配置预处理配置</h2>\n<figure class=\"highlight shell\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br><span class=\"line\">8</span><br><span class=\"line\">9</span><br><span class=\"line\">10</span><br><span class=\"line\">11</span><br><span class=\"line\">12</span><br><span class=\"line\">13</span><br><span class=\"line\">14</span><br><span class=\"line\">15</span><br><span class=\"line\">16</span><br><span class=\"line\">17</span><br><span class=\"line\">18</span><br><span class=\"line\">19</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">parsers:</span><br><span class=\"line\">  - reg: &#x27;slbable$&#x27;</span><br><span class=\"line\">    yaml:</span><br><span class=\"line\">      append-proxy-groups:</span><br><span class=\"line\">        - name: ⚖️ 负载均衡-散列</span><br><span class=\"line\">          type: load-balance</span><br><span class=\"line\">          url: &#x27;http://www.google.com/generate_204&#x27;</span><br><span class=\"line\">          interval: 300</span><br><span class=\"line\">          strategy: consistent-hashing</span><br><span class=\"line\">        - name: ⚖️ 负载均衡-轮询</span><br><span class=\"line\">          type: load-balance</span><br><span class=\"line\">          url: &#x27;http://www.google.com/generate_204&#x27;</span><br><span class=\"line\">          interval: 300</span><br><span class=\"line\">          strategy: round-robin</span><br><span class=\"line\">      commands:</span><br><span class=\"line\">        - proxy-groups.⚖️ 负载均衡-散列.proxies=[]proxyNames</span><br><span class=\"line\">        - proxy-groups.0.proxies.0+⚖️ 负载均衡-散列</span><br><span class=\"line\">        - proxy-groups.⚖️ 负载均衡-轮询.proxies=[]proxyNames</span><br><span class=\"line\">        - proxy-groups.0.proxies.0+⚖️ 负载均衡-轮询</span><br></pre></td></tr></table></figure>\n<h2 id=\"二-重新下载配置文件\"><a class=\"markdownIt-Anchor\" href=\"#二-重新下载配置文件\">#</a> 二、重新下载配置文件</h2>\n<p>在配置 url 尾部添加  <code>#slbable</code>  ，下载完成即可选择轮询与散列模式。</p>\n",
+            "tags": [
+                "clash"
+            ]
+        }
+    ]
+}

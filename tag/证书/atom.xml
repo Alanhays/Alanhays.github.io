@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Alanhays.github.io</id>
+    <title>Faceless Blog • Posts by &#34;证书&#34; tag</title>
+    <link href="https://Alanhays.github.io" />
+    <updated>2023-12-25T06:17:05.000Z</updated>
+    <category term="AST" />
+    <category term="解混淆" />
+    <category term="nodejs" />
+    <category term="build" />
+    <category term="frida" />
+    <category term="jnitrace" />
+    <category term="objection" />
+    <category term="GitHub" />
+    <category term="Actions" />
+    <category term="TLS/SSL" />
+    <category term="JA3" />
+    <category term="JA4" />
+    <category term="证书" />
+    <category term="magisk" />
+    <category term="andorid" />
+    <category term="fastboot" />
+    <category term="root" />
+    <category term="charles" />
+    <category term="抓包" />
+    <category term="clash" />
+    <category term="加速乐" />
+    <category term="思路" />
+    <category term="SO" />
+    <category term="Native" />
+    <category term="入门级" />
+    <category term="windows" />
+    <category term="资源" />
+    <category term="疑难杂症" />
+    <category term="hexo" />
+    <entry>
+        <id>https://alanhays.github.io/posts/42317.html</id>
+        <title>android证书安装与校验相关解决办法</title>
+        <link rel="alternate" href="https://alanhays.github.io/posts/42317.html"/>
+        <content type="html">&lt;h1 id=&#34;android-安装证书&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#android-安装证书&#34;&gt;#&lt;/a&gt; Android 安装证书&lt;/h1&gt;
+&lt;h2 id=&#34;magisk-安装证书插件推荐&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#magisk-安装证书插件推荐&#34;&gt;#&lt;/a&gt; Magisk 安装证书插件（推荐）&lt;/h2&gt;
+&lt;p&gt;Magisk 中安装插件并&lt;strong&gt;重启&lt;/strong&gt;，在手机&lt;strong&gt;设置&lt;/strong&gt;安全中&lt;strong&gt;正常手动安装&lt;/strong&gt;证书至&lt;strong&gt;用户证书&lt;/strong&gt;，接着&lt;strong&gt;重启&lt;/strong&gt;手机用户证书则会&lt;strong&gt;移动至系统&lt;/strong&gt;证书。&lt;br&gt;
+&lt;a href=&#34;https://www.yuque.com/attachments/yuque/0/2023/zip/26634545/1703485160886-247fbe50-2bba-4cc0-a497-de50d632fce2.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2023%2Fzip%2F26634545%2F1703485160886-247fbe50-2bba-4cc0-a497-de50d632fce2.zip%22%2C%22name%22%3A%22Move_Certificates-v1.9.zip%22%2C%22size%22%3A6632%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u5964d71d-391f-441d-b906-9b9861b2cf1%22%2C%22taskType%22%3A%22transfer%22%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22mode%22%3A%22title%22%2C%22id%22%3A%22G2ubz%22%2C%22card%22%3A%22file%22%7D&#34;&gt;Move_Certificates-v1.9.zip&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;shell-命令安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#shell-命令安装&#34;&gt;#&lt;/a&gt; Shell 命令安装&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;操作证书相关命令&lt;/strong&gt;（kali 自带 openssl）&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;# &lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;查看crt\der格式证书&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;openssl x509 -in FiddlerRoot.crt -inform DER -noout -text&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;# &lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;查看pem证书&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;openssl x509 -in certificate.pem -inform pem -noout -text&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;# &lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;crt/der转pem&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;openssl x509 -in FiddlerRoot.crt -inform DER -out certificate.pem -outform PEM&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;# &lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;pem转der/crt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;openssl x509 -in certificate.pem -inform PEM -out FiddlerRoot.der -outform DER&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;# &lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;计算pem证书&lt;span class=&#34;built_in&#34;&gt;hash&lt;/span&gt;值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;openssl x509 -subject_hash_old -in Desktop.pem&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;导入到系统前需要&lt;strong&gt;重命名&lt;/strong&gt;证书 &lt;strong&gt;hash 值.0 -&amp;gt; xxxx.0&lt;/strong&gt;。如果存在文件名&lt;strong&gt;冲突&lt;/strong&gt;，则可将 &lt;code&gt;.0&lt;/code&gt;  改为 &lt;code&gt;.1&lt;/code&gt;  或 &lt;code&gt;.2&lt;/code&gt;  等等。&lt;br&gt;
+&lt;strong&gt;新开&lt;/strong&gt;一个 &lt;code&gt;cmd&lt;/code&gt;  执行以下命令&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;hash&lt;/strong&gt; 值通过&lt;strong&gt; pem&lt;/strong&gt; 证书计算得到（上面最后一条指令）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adb root&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adb remount&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adb push xxxxxxx.0 /system/etc/security/cacerts/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adb shell&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cd /system/etc/security/cacerts/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;chmod 644 xxxxxxx.0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;reboot&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+        <category term="证书" />
+        <category term="magisk" />
+        <updated>2023-12-25T06:17:05.000Z</updated>
+    </entry>
+</feed>
